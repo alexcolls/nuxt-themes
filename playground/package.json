@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-themes-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.21.0",
+    "@nuxtjs/i18n": "^8.3.1",
+    "@pinia/nuxt": "^0.5.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "@iconify-json/heroicons": "^1.2.1",
+    "@iconify-json/line-md": "^1.2.5",
+    "@iconify-json/circle-flags": "^1.2.5",
+    "@iconify-json/svg-spinners": "^1.2.2",
+    "@iconify-json/pepicons-pop": "^1.1.8",
+    "@iconify-json/material-symbols": "^1.1.61"
+  },
+  "devDependencies": {
+    "nuxt": "^3.12.1"
+  }
+}
