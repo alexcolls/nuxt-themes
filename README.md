@@ -4,13 +4,14 @@ A Nuxt 3 module providing reusable Layout and Common UI components built with Nu
 
 ## Features
 
-- 🎨 **48+ Ready-to-Use Components** - Layout (Header, Footer, Theme) and Common components (Buttons, Loaders, Text, etc.)
+- 🎨 **50+ Ready-to-Use Components** - Auth, Layout, and Common components (Buttons, Loaders, Text, etc.)
 - 🌙 **Dark Mode Support** - Fully integrated theme switching with system preference detection
 - 🌍 **i18n Ready** - Multi-language support (English, Spanish, French)
 - 💾 **State Persistence** - Pinia stores with automatic state persistence
 - 🎯 **TypeScript** - Full TypeScript support
 - 🔧 **Highly Configurable** - Customize colors, themes, and behavior
 - ⚡ **Auto-Import** - All components and composables are auto-imported
+- 🔐 **Authentication UI** - Ready-to-use login components with animations
 
 ## Installation
 
@@ -96,66 +97,172 @@ NUXT_PUBLIC_NUXT_XUI_LOGO_URL=https://your-site.com
 
 ## Components
 
-### Layout Components
+All components are **auto-imported** and ready to use without any imports. Total: **50+ components**.
 
-- **LayoutHeader** - Fixed header with logo and menu
-- **LayoutFooter** - Fixed footer with copyright and theme controls
-- **LayoutLogo** - Configurable logo component (supports slot for custom logo)
-- **LayoutTheme** - Theme control panel
-  - **LayoutThemeBtnLight** - Light/Dark/System theme switcher
-  - **LayoutThemeBtnLang** - Language selector
-  - **LayoutThemeBtnColor** - Primary color picker
-  - **LayoutThemeBtnAudio** - Audio controls
-  - **LayoutThemeBtnVideo** - Video background controls
-  - **LayoutThemeBtnAuth** - Authentication status display
+### 🔐 Authentication Components (1)
 
-### Common Components
+| Component | Description |
+|-----------|-------------|
+| `AuthLogin` | Full-featured animated login form with hover interactions, validation, and success/error states |
 
-#### Buttons
-- `CommonBtnGradient` - Gradient styled button
-- `CommonBtnIcon` - Icon button
-- `CommonBtnAccept`, `CommonBtnCancel`, `CommonBtnClose`
-- `CommonBtnAdd`, `CommonBtnEdit`, `CommonBtnDelete`
-- `CommonBtnUpload`, `CommonBtnSubmit`, `CommonBtnReload`
-- `CommonBtnScrollTop` - Scroll to top button
+**Example:**
+```vue
+<AuthLogin :on-login="handleLogin" />
+```
 
-#### Loaders
-- `CommonLoader` - Standard loader
-- `CommonLoaderSimple` - Minimal loader
-- `CommonLoaderInfo` - Loader with info slot
-- `CommonLoaderSlot` - Customizable loader
-- `CommonLoadingDots` - Animated dots
-- `CommonAiLoader` - AI-themed loader with variants (Black, White, SVG)
-- `CommonImgLoader` - Image loading skeleton
+### 🎨 Layout Components (10)
 
-#### Text Components
-- `CommonTxtTitle` - Page title
-- `CommonTxtSubtitle` - Subtitle text
-- `CommonTxtText` - Body text
-- `CommonTxtGradient` - Gradient text effect
-- `CommonTxtColor` - Colored text
+| Component | Description |
+|-----------|-------------|
+| `LayoutHeader` | Fixed header with logo and menu |
+| `LayoutFooter` | Fixed footer with copyright and theme controls |
+| `LayoutLogo` | Configurable logo component (supports slot for custom logo) |
+| `LayoutTheme` | Theme control panel |
+| `LayoutThemeBtnLight` | Light/Dark/System theme switcher |
+| `LayoutThemeBtnLang` | Language selector dropdown |
+| `LayoutThemeBtnColor` | Primary color picker |
+| `LayoutThemeBtnAudio` | Audio volume controls |
+| `LayoutThemeBtnVideo` | Video background controls |
+| `LayoutThemeBtnAuth` | Authentication status display |
 
-#### Utilities
-- `CommonContainer` - Responsive container with padding
-- `CommonDividerX`, `CommonDividerY` - Horizontal/Vertical dividers
-- `CommonProgressBar` - Progress indicator
-- `CommonSlider` - Range slider
-- `CommonClock` - Current time display
-- `CommonKbd`, `CommonKbdRed` - Keyboard key display
-- `CommonEmptyDB` - Empty state component
+**Example:**
+```vue
+<LayoutHeader />
+<main>
+  <!-- Your content -->
+</main>
+<LayoutFooter />
+```
 
-#### Media
-- `CommonBgVideo` - Background video player
-- `CommonBgVideoYoutube` - YouTube background video
-- `CommonImgViewer` - Image viewer with zoom
-- `CommonImgSkeleton` - Image loading skeleton
+### 🔘 Button Components (11)
 
-#### Data Display
-- `CommonJsonViewer` - JSON viewer
-- `CommonJsonViewerColors` - Colored JSON viewer
+| Component | Description |
+|-----------|-------------|
+| `CommonBtnGradient` | Gradient styled button with icon support |
+| `CommonBtnIcon` | Icon-only button |
+| `CommonBtnAccept` | Pre-styled accept/confirm button |
+| `CommonBtnCancel` | Pre-styled cancel button |
+| `CommonBtnClose` | Close button with icon |
+| `CommonBtnAdd` | Add/create button with plus icon |
+| `CommonBtnEdit` | Edit button with pencil icon |
+| `CommonBtnDelete` | Delete button with trash icon |
+| `CommonBtnUpload` | Upload button with upload icon |
+| `CommonBtnSubmit` | Submit/send button |
+| `CommonBtnReload` | Reload/refresh button |
+| `CommonBtnScrollTop` | Scroll to top floating button |
 
-#### Effects
-- `CommonCursorLight` - Flashlight cursor effect
+**Example:**
+```vue
+<CommonBtnGradient icon="i-heroicons-rocket-launch">
+  Get Started
+</CommonBtnGradient>
+<CommonBtnAccept @click="save" />
+<CommonBtnCancel @click="cancel" />
+```
+
+### ⏳ Loader Components (8)
+
+| Component | Description |
+|-----------|-------------|
+| `CommonLoader` | Standard rotating loader |
+| `CommonLoaderSimple` | Minimal loader animation |
+| `CommonLoaderInfo` | Loader with custom info slot |
+| `CommonLoaderSlot` | Fully customizable loader with slot |
+| `CommonLoadingDots` | Animated bouncing dots |
+| `CommonAiLoader` | AI-themed loader (default) |
+| `CommonAiLoaderBlack` | AI loader in black theme |
+| `CommonAiLoaderWhite` | AI loader in white theme |
+| `CommonAiLoaderSVG` | AI loader as SVG |
+| `CommonImgLoader` | Image loading skeleton |
+
+**Example:**
+```vue
+<CommonLoader v-if="isLoading" />
+<CommonLoadingDots />
+<CommonAiLoader />
+```
+
+### 📝 Text Components (5)
+
+| Component | Description |
+|-----------|-------------|
+| `CommonTxtTitle` | Large page title (h1) |
+| `CommonTxtSubtitle` | Subtitle text (h2) |
+| `CommonTxtText` | Body text with consistent styling |
+| `CommonTxtGradient` | Text with gradient effect |
+| `CommonTxtColor` | Text with primary color |
+
+**Example:**
+```vue
+<CommonTxtTitle>Welcome to Nuxt XUI</CommonTxtTitle>
+<CommonTxtSubtitle>Build faster with ready components</CommonTxtSubtitle>
+<CommonTxtGradient class="text-3xl">Amazing!</CommonTxtGradient>
+```
+
+### 🛠️ Utility Components (8)
+
+| Component | Description |
+|-----------|-------------|
+| `CommonContainer` | Responsive container with padding |
+| `CommonDividerX` | Horizontal divider line |
+| `CommonDividerY` | Vertical divider line |
+| `CommonProgressBar` | Progress indicator bar |
+| `CommonSlider` | Range slider input |
+| `CommonClock` | Current time display |
+| `CommonKbd` | Keyboard key display |
+| `CommonKbdRed` | Keyboard key in red theme |
+| `CommonEmptyDB` | Empty state component |
+
+**Example:**
+```vue
+<CommonContainer>
+  <CommonProgressBar :value="75" />
+  <CommonDividerX />
+  <div class="flex gap-2">
+    <CommonKbd>Ctrl</CommonKbd>
+    <CommonKbd>+</CommonKbd>
+    <CommonKbd>K</CommonKbd>
+  </div>
+</CommonContainer>
+```
+
+### 🎬 Media Components (4)
+
+| Component | Description |
+|-----------|-------------|
+| `CommonBgVideo` | Background video player |
+| `CommonBgVideoYoutube` | YouTube background video |
+| `CommonImgViewer` | Image viewer with zoom |
+| `CommonImgSkeleton` | Image loading skeleton |
+
+**Example:**
+```vue
+<CommonBgVideo v-if="ui.showVideo && ui.videoURL" />
+<CommonImgViewer :src="imageUrl" />
+```
+
+### 📊 Data Display Components (2)
+
+| Component | Description |
+|-----------|-------------|
+| `CommonJsonViewer` | JSON viewer with syntax highlighting |
+| `CommonJsonViewerColors` | Colored JSON viewer |
+
+**Example:**
+```vue
+<CommonJsonViewer :data="myJsonData" />
+```
+
+### ✨ Effect Components (1)
+
+| Component | Description |
+|-----------|-------------|
+| `CommonCursorLight` | Flashlight cursor effect |
+
+**Example:**
+```vue
+<CommonCursorLight v-if="ui.flashlight" />
+```
 
 ## Composables
 

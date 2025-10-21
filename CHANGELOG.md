@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.2.0 - 2025-10-21
+
+### ✨ Features
+
+- Added `AuthLogin` component with animated form interactions
+- Progressive form reveal on hover
+- Username and password validation with visual feedback
+- Success/error state animations
+- Demo mode support (no backend required)
+- Custom `onLogin` prop for authentication handlers
+
+### 📚 Documentation
+
+- Complete component reference with 50+ components organized by category
+- Added example pages in playground (home and example pages)
+- Created `GETTING_STARTED.md` guide
+- Updated README with component tables and usage examples
+- All components documented with examples
+
+### 🎨 Component Library
+
+**Component Categories:**
+- 🔐 Authentication (1): AuthLogin
+- 🎨 Layout (10): Header, Footer, Logo, Theme controls
+- 🔘 Buttons (11): Gradient, Icon, Accept, Cancel, Add, Edit, Delete, etc.
+- ⏳ Loaders (8): Standard, Simple, AI-themed, Dots, etc.
+- 📝 Text (5): Title, Subtitle, Gradient, Color, Text
+- 🛠️ Utilities (8): Container, Dividers, Progress, Clock, Kbd, etc.
+- 🎬 Media (4): Background videos, Image viewer
+- 📊 Data Display (2): JSON viewers
+- ✨ Effects (1): Cursor light
+
+### 🔄 Breaking Changes
+
+- Renamed module config key from `nuxtThemes` to `nuxtXui`
+- Updated environment variables to `NUXT_PUBLIC_NUXT_XUI_*` format
+- Renamed Pinia store namespaces from `nuxt-themes.*` to `nuxt-xui.*`
+
+### 🛠️ Infrastructure
+
+- Added `npm start` script for easier development
+- Updated playground with example pages
+- Repository renamed from `nuxt-themes` to `nuxt-xui`
+
 ## v0.1.0 - 2025-10-20
 
 ### ✨ Features
