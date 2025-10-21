@@ -1,4 +1,4 @@
-export const useAuthStore = defineStore('nuxt-themes.auth', {
+export const useAuthStore = defineStore('nuxt-xui.auth', {
   persist: true,
   state: () => ({
     isAuth: false,

@@ -1,4 +1,4 @@
-# @nuxt-themes/layout-ui
+# @nuxt-xui/layout-ui
 
 A Nuxt 3 module providing reusable Layout and Common UI components built with Nuxt UI.
 
@@ -15,7 +15,7 @@ A Nuxt 3 module providing reusable Layout and Common UI components built with Nu
 ## Installation
 
 ```bash
-npm install @nuxt-themes/layout-ui
+npm install @nuxt-xui/layout-ui
 ```
 
 ### Peer Dependencies
@@ -39,10 +39,10 @@ npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-f
 ```ts
 export default defineNuxtConfig({
   modules: [
-    '@nuxt-themes/layout-ui'
+    '@nuxt-xui/layout-ui'
   ],
   
-  nuxtThemes: {
+  nuxtXui: {
     version: '1.0.0',
     logoURL: 'https://your-site.com'
   }
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
 
 ```ts
 export default defineNuxtConfig({
-  nuxtThemes: {
+  nuxtXui: {
     // Version displayed in footer
     version: '1.0.0',
     
@@ -90,8 +90,8 @@ export default defineNuxtConfig({
 You can also configure the module using environment variables (place in `.env`):
 
 ```env
-NUXT_PUBLIC_NUXT_THEMES_VERSION=1.0.0
-NUXT_PUBLIC_NUXT_THEMES_LOGO_URL=https://your-site.com
+NUXT_PUBLIC_NUXT_XUI_VERSION=1.0.0
+NUXT_PUBLIC_NUXT_XUI_LOGO_URL=https://your-site.com
 ```
 
 ## Components

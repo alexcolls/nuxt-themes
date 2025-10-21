@@ -1,4 +1,4 @@
-export const useUIStore = defineStore('nuxt-themes.ui', {
+export const useUIStore = defineStore('nuxt-xui.ui', {
   persist: true,
   state: () => ({
     key: 0,

@@ -1,4 +1,4 @@
-export const useAppStore = defineStore('nuxt-themes.app', {
+export const useAppStore = defineStore('nuxt-xui.app', {
   persist: true,
   state: () => ({
     selectedDocType: '',

@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### ✨ Features
 
-- Initial release of @nuxt-themes/layout-ui module
+- Initial release of @nuxt-xui module
 - 48+ reusable Layout and Common components
 - Full dark mode support with system preference detection
 - Multi-language support (English, Spanish, French)

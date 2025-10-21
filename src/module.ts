@@ -22,8 +22,8 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@nuxt-themes/layout-ui',
-    configKey: 'nuxtThemes',
+    name: '@nuxt-xui/layout-ui',
+    configKey: 'nuxtXui',
     compatibility: {
       nuxt: '^3.0.0'
     }
@@ -41,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url);
 
     // Add runtime config
-    nuxt.options.runtimeConfig.public.nuxtThemes = {
+    nuxt.options.runtimeConfig.public.nuxtXui = {
       version: options.version,
       logoURL: options.logoURL
     };
