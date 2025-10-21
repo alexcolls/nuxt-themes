@@ -1,4 +1,4 @@
-# @nuxt-xui/layout-ui
+# @nuxt-xui
 
 A Nuxt 3 module providing reusable Layout and Common UI components built with Nuxt UI.
 
@@ -38,7 +38,7 @@ npm install --legacy-peer-deps @iconify-json/heroicons @iconify-json/line-md @ic
 ### 3. Install the Module
 
 ```bash
-npm install --legacy-peer-deps @nuxt-xui/layout-ui
+npm install --legacy-peer-deps @nuxt-xui
 ```
 
 **Or create a `.npmrc` file** in your project root:
@@ -52,7 +52,7 @@ Then install normally:
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
-npm install @nuxt-xui/layout-ui
+npm install @nuxt-xui
 ```
 
 ### 4. Configure Your App
@@ -62,32 +62,32 @@ Add the required modules and nuxt-xui to your `nuxt.config.ts`:
 ```ts
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
-    '@nuxt-xui/layout-ui'  // Add this LAST
+    "@nuxt/ui",
+    "@nuxtjs/i18n",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxt-xui", // Add this LAST
   ],
-  
+
   // Configure i18n
   i18n: {
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'es', iso: 'es-ES', name: 'Español' },
-      { code: 'fr', iso: 'fr-FR', name: 'Français' }
+      { code: "en", iso: "en-US", name: "English" },
+      { code: "es", iso: "es-ES", name: "Español" },
+      { code: "fr", iso: "fr-FR", name: "Français" },
     ],
-    defaultLocale: 'en'
+    defaultLocale: "en",
   },
-  
+
   // Configure nuxt-xui
   nuxtXui: {
-    version: '1.0.0',
-    logoURL: 'https://your-site.com'
-  }
-})
+    version: "1.0.0",
+    logoURL: "https://your-site.com",
+  },
+});
 ```
 
-**Important:** Add `@nuxt-xui/layout-ui` as the **last module** in the modules array to avoid conflicts.
+**Important:** Add `@nuxt-xui` as the **last module** in the modules array to avoid conflicts.
 
 ## Quick Start
 
@@ -116,15 +116,15 @@ Once installed and configured, all components are auto-imported and ready to use
 export default defineNuxtConfig({
   nuxtXui: {
     // Version displayed in footer
-    version: '1.0.0',
-    
+    version: "1.0.0",
+
     // Logo URL for header click action
-    logoURL: 'https://your-site.com',
-    
+    logoURL: "https://your-site.com",
+
     // Enable or disable the module
-    enabled: true
-  }
-})
+    enabled: true,
+  },
+});
 ```
 
 ### Environment Variables
@@ -142,31 +142,33 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 🔐 Authentication Components (1)
 
-| Component | Description |
-|-----------|-------------|
+| Component   | Description                                                                                     |
+| ----------- | ----------------------------------------------------------------------------------------------- |
 | `AuthLogin` | Full-featured animated login form with hover interactions, validation, and success/error states |
 
 **Example:**
+
 ```vue
 <AuthLogin :on-login="handleLogin" />
 ```
 
 ### 🎨 Layout Components (10)
 
-| Component | Description |
-|-----------|-------------|
-| `LayoutHeader` | Fixed header with logo and menu |
-| `LayoutFooter` | Fixed footer with copyright and theme controls |
-| `LayoutLogo` | Configurable logo component (supports slot for custom logo) |
-| `LayoutTheme` | Theme control panel |
-| `LayoutThemeBtnLight` | Light/Dark/System theme switcher |
-| `LayoutThemeBtnLang` | Language selector dropdown |
-| `LayoutThemeBtnColor` | Primary color picker |
-| `LayoutThemeBtnAudio` | Audio volume controls |
-| `LayoutThemeBtnVideo` | Video background controls |
-| `LayoutThemeBtnAuth` | Authentication status display |
+| Component             | Description                                                 |
+| --------------------- | ----------------------------------------------------------- |
+| `LayoutHeader`        | Fixed header with logo and menu                             |
+| `LayoutFooter`        | Fixed footer with copyright and theme controls              |
+| `LayoutLogo`          | Configurable logo component (supports slot for custom logo) |
+| `LayoutTheme`         | Theme control panel                                         |
+| `LayoutThemeBtnLight` | Light/Dark/System theme switcher                            |
+| `LayoutThemeBtnLang`  | Language selector dropdown                                  |
+| `LayoutThemeBtnColor` | Primary color picker                                        |
+| `LayoutThemeBtnAudio` | Audio volume controls                                       |
+| `LayoutThemeBtnVideo` | Video background controls                                   |
+| `LayoutThemeBtnAuth`  | Authentication status display                               |
 
 **Example:**
+
 ```vue
 <LayoutHeader />
 <main>
@@ -177,22 +179,23 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 🔘 Button Components (11)
 
-| Component | Description |
-|-----------|-------------|
-| `CommonBtnGradient` | Gradient styled button with icon support |
-| `CommonBtnIcon` | Icon-only button |
-| `CommonBtnAccept` | Pre-styled accept/confirm button |
-| `CommonBtnCancel` | Pre-styled cancel button |
-| `CommonBtnClose` | Close button with icon |
-| `CommonBtnAdd` | Add/create button with plus icon |
-| `CommonBtnEdit` | Edit button with pencil icon |
-| `CommonBtnDelete` | Delete button with trash icon |
-| `CommonBtnUpload` | Upload button with upload icon |
-| `CommonBtnSubmit` | Submit/send button |
-| `CommonBtnReload` | Reload/refresh button |
-| `CommonBtnScrollTop` | Scroll to top floating button |
+| Component            | Description                              |
+| -------------------- | ---------------------------------------- |
+| `CommonBtnGradient`  | Gradient styled button with icon support |
+| `CommonBtnIcon`      | Icon-only button                         |
+| `CommonBtnAccept`    | Pre-styled accept/confirm button         |
+| `CommonBtnCancel`    | Pre-styled cancel button                 |
+| `CommonBtnClose`     | Close button with icon                   |
+| `CommonBtnAdd`       | Add/create button with plus icon         |
+| `CommonBtnEdit`      | Edit button with pencil icon             |
+| `CommonBtnDelete`    | Delete button with trash icon            |
+| `CommonBtnUpload`    | Upload button with upload icon           |
+| `CommonBtnSubmit`    | Submit/send button                       |
+| `CommonBtnReload`    | Reload/refresh button                    |
+| `CommonBtnScrollTop` | Scroll to top floating button            |
 
 **Example:**
+
 ```vue
 <CommonBtnGradient icon="i-heroicons-rocket-launch">
   Get Started
@@ -203,20 +206,21 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### ⏳ Loader Components (8)
 
-| Component | Description |
-|-----------|-------------|
-| `CommonLoader` | Standard rotating loader |
-| `CommonLoaderSimple` | Minimal loader animation |
-| `CommonLoaderInfo` | Loader with custom info slot |
-| `CommonLoaderSlot` | Fully customizable loader with slot |
-| `CommonLoadingDots` | Animated bouncing dots |
-| `CommonAiLoader` | AI-themed loader (default) |
-| `CommonAiLoaderBlack` | AI loader in black theme |
-| `CommonAiLoaderWhite` | AI loader in white theme |
-| `CommonAiLoaderSVG` | AI loader as SVG |
-| `CommonImgLoader` | Image loading skeleton |
+| Component             | Description                         |
+| --------------------- | ----------------------------------- |
+| `CommonLoader`        | Standard rotating loader            |
+| `CommonLoaderSimple`  | Minimal loader animation            |
+| `CommonLoaderInfo`    | Loader with custom info slot        |
+| `CommonLoaderSlot`    | Fully customizable loader with slot |
+| `CommonLoadingDots`   | Animated bouncing dots              |
+| `CommonAiLoader`      | AI-themed loader (default)          |
+| `CommonAiLoaderBlack` | AI loader in black theme            |
+| `CommonAiLoaderWhite` | AI loader in white theme            |
+| `CommonAiLoaderSVG`   | AI loader as SVG                    |
+| `CommonImgLoader`     | Image loading skeleton              |
 
 **Example:**
+
 ```vue
 <CommonLoader v-if="isLoading" />
 <CommonLoadingDots />
@@ -225,15 +229,16 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 📝 Text Components (5)
 
-| Component | Description |
-|-----------|-------------|
-| `CommonTxtTitle` | Large page title (h1) |
-| `CommonTxtSubtitle` | Subtitle text (h2) |
-| `CommonTxtText` | Body text with consistent styling |
-| `CommonTxtGradient` | Text with gradient effect |
-| `CommonTxtColor` | Text with primary color |
+| Component           | Description                       |
+| ------------------- | --------------------------------- |
+| `CommonTxtTitle`    | Large page title (h1)             |
+| `CommonTxtSubtitle` | Subtitle text (h2)                |
+| `CommonTxtText`     | Body text with consistent styling |
+| `CommonTxtGradient` | Text with gradient effect         |
+| `CommonTxtColor`    | Text with primary color           |
 
 **Example:**
+
 ```vue
 <CommonTxtTitle>Welcome to Nuxt XUI</CommonTxtTitle>
 <CommonTxtSubtitle>Build faster with ready components</CommonTxtSubtitle>
@@ -242,19 +247,20 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 🛠️ Utility Components (8)
 
-| Component | Description |
-|-----------|-------------|
-| `CommonContainer` | Responsive container with padding |
-| `CommonDividerX` | Horizontal divider line |
-| `CommonDividerY` | Vertical divider line |
-| `CommonProgressBar` | Progress indicator bar |
-| `CommonSlider` | Range slider input |
-| `CommonClock` | Current time display |
-| `CommonKbd` | Keyboard key display |
-| `CommonKbdRed` | Keyboard key in red theme |
-| `CommonEmptyDB` | Empty state component |
+| Component           | Description                       |
+| ------------------- | --------------------------------- |
+| `CommonContainer`   | Responsive container with padding |
+| `CommonDividerX`    | Horizontal divider line           |
+| `CommonDividerY`    | Vertical divider line             |
+| `CommonProgressBar` | Progress indicator bar            |
+| `CommonSlider`      | Range slider input                |
+| `CommonClock`       | Current time display              |
+| `CommonKbd`         | Keyboard key display              |
+| `CommonKbdRed`      | Keyboard key in red theme         |
+| `CommonEmptyDB`     | Empty state component             |
 
 **Example:**
+
 ```vue
 <CommonContainer>
   <CommonProgressBar :value="75" />
@@ -269,14 +275,15 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 🎬 Media Components (4)
 
-| Component | Description |
-|-----------|-------------|
-| `CommonBgVideo` | Background video player |
+| Component              | Description              |
+| ---------------------- | ------------------------ |
+| `CommonBgVideo`        | Background video player  |
 | `CommonBgVideoYoutube` | YouTube background video |
-| `CommonImgViewer` | Image viewer with zoom |
-| `CommonImgSkeleton` | Image loading skeleton |
+| `CommonImgViewer`      | Image viewer with zoom   |
+| `CommonImgSkeleton`    | Image loading skeleton   |
 
 **Example:**
+
 ```vue
 <CommonBgVideo v-if="ui.showVideo && ui.videoURL" />
 <CommonImgViewer :src="imageUrl" />
@@ -284,23 +291,25 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 📊 Data Display Components (2)
 
-| Component | Description |
-|-----------|-------------|
-| `CommonJsonViewer` | JSON viewer with syntax highlighting |
-| `CommonJsonViewerColors` | Colored JSON viewer |
+| Component                | Description                          |
+| ------------------------ | ------------------------------------ |
+| `CommonJsonViewer`       | JSON viewer with syntax highlighting |
+| `CommonJsonViewerColors` | Colored JSON viewer                  |
 
 **Example:**
+
 ```vue
 <CommonJsonViewer :data="myJsonData" />
 ```
 
 ### ✨ Effect Components (1)
 
-| Component | Description |
-|-----------|-------------|
+| Component           | Description              |
+| ------------------- | ------------------------ |
 | `CommonCursorLight` | Flashlight cursor effect |
 
 **Example:**
+
 ```vue
 <CommonCursorLight v-if="ui.flashlight" />
 ```
@@ -315,17 +324,17 @@ Access all Pinia stores:
 const { ui, auth, app } = useStore();
 
 // UI Store
-ui.isDark // Current theme state
-ui.locale // Current language
-ui.primary // Primary color
-ui.flashlight // Flashlight effect state
+ui.isDark; // Current theme state
+ui.locale; // Current language
+ui.primary; // Primary color
+ui.flashlight; // Flashlight effect state
 
 // Auth Store
-auth.isAuth // Authentication status
-auth.logout() // Logout function
+auth.isAuth; // Authentication status
+auth.logout(); // Logout function
 
 // App Store
-app.isMenuOpen // Menu state
+app.isMenuOpen; // Menu state
 ```
 
 ### useLangs()
@@ -398,15 +407,15 @@ You can extend the stores in your application:
 // composables/useAuthExtended.ts
 export const useAuthExtended = () => {
   const authStore = useAuthStore();
-  
+
   const loginWithCustomProvider = async (credentials) => {
     // Your custom logic
     authStore.isAuth = true;
   };
-  
+
   return {
     ...authStore,
-    loginWithCustomProvider
+    loginWithCustomProvider,
   };
 };
 ```
@@ -418,10 +427,10 @@ The module uses Tailwind CSS and Nuxt UI's color system. Configure colors in you
 ```ts
 export default defineAppConfig({
   ui: {
-    primary: 'blue',
-    gray: 'slate'
-  }
-})
+    primary: "blue",
+    gray: "slate",
+  },
+});
 ```
 
 ## i18n Configuration
@@ -432,14 +441,14 @@ The module includes translations for English, Spanish, and French. To add more l
 export default defineNuxtConfig({
   i18n: {
     locales: [
-      { code: 'en', file: 'en.ts' },
-      { code: 'es', file: 'es.ts' },
-      { code: 'de', file: 'de.ts' } // Add your language
+      { code: "en", file: "en.ts" },
+      { code: "es", file: "es.ts" },
+      { code: "de", file: "de.ts" }, // Add your language
     ],
-    langDir: 'locales',
-    defaultLocale: 'en'
-  }
-})
+    langDir: "locales",
+    defaultLocale: "en",
+  },
+});
 ```
 
 ## Video Background Configuration
@@ -450,13 +459,13 @@ Some components support video backgrounds:
 const { ui } = useStore();
 
 // Set video URL
-ui.videoURL = 'https://example.com/video.mp4';
+ui.videoURL = "https://example.com/video.mp4";
 ui.showVideo = true;
 ui.videoOpacity = 0.5;
 ui.volumeVideo = 0.8;
 
 // Add video to playlist
-ui.addVideo('https://example.com/another-video.mp4');
+ui.addVideo("https://example.com/another-video.mp4");
 ```
 
 ## Development

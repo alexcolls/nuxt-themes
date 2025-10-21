@@ -22,7 +22,7 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@nuxt-xui/layout-ui',
+    name: '@nuxt-xui',
     configKey: 'nuxtXui',
     compatibility: {
       nuxt: '^3.0.0 || ^4.0.0'

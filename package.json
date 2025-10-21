@@ -1,5 +1,5 @@
 {
-  "name": "@nuxt-xui/layout-ui",
+  "name": "@nuxt-xui",
   "version": "0.2.1",
   "description": "A Nuxt UI module providing reusable Layout and Common components",
   "repository": "your-username/nuxt-xui",

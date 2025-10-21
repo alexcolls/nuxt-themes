@@ -1,6 +1,6 @@
 # Dependency Isolation
 
-This document explains how `@nuxt-xui/layout-ui` manages dependencies to avoid conflicts with parent applications.
+This document explains how `@nuxt-xui` manages dependencies to avoid conflicts with parent applications.
 
 ## Architecture
 
@@ -12,9 +12,9 @@ The module uses **peer dependencies** instead of automatically installing depend
 
 ```ts
 // WRONG - This causes conflicts
-await installModule('@nuxt/ui');
-await installModule('@nuxtjs/i18n');
-await installModule('@pinia/nuxt');
+await installModule("@nuxt/ui");
+await installModule("@nuxtjs/i18n");
+await installModule("@pinia/nuxt");
 ```
 
 ### ✅ What We DO
@@ -48,7 +48,7 @@ npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-f
 ### Step 2: Install the Module
 
 ```bash
-npm install @nuxt-xui/layout-ui
+npm install @nuxt-xui
 ```
 
 ### Step 3: Configure `nuxt.config.ts`
@@ -56,46 +56,51 @@ npm install @nuxt-xui/layout-ui
 ```ts
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/ui',                              // 1. Install Nuxt UI first
-    '@nuxtjs/i18n',                          // 2. Install i18n
-    '@pinia/nuxt',                           // 3. Install Pinia
-    '@pinia-plugin-persistedstate/nuxt',     // 4. Install Pinia persistence
-    '@nuxt-xui/layout-ui'                    // 5. Install nuxt-xui LAST
+    "@nuxt/ui", // 1. Install Nuxt UI first
+    "@nuxtjs/i18n", // 2. Install i18n
+    "@pinia/nuxt", // 3. Install Pinia
+    "@pinia-plugin-persistedstate/nuxt", // 4. Install Pinia persistence
+    "@nuxt-xui", // 5. Install nuxt-xui LAST
   ],
-  
+
   // Configure i18n
   i18n: {
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'es', iso: 'es-ES', name: 'Español' },
-      { code: 'fr', iso: 'fr-FR', name: 'Français' }
+      { code: "en", iso: "en-US", name: "English" },
+      { code: "es", iso: "es-ES", name: "Español" },
+      { code: "fr", iso: "fr-FR", name: "Français" },
     ],
-    defaultLocale: 'en'
+    defaultLocale: "en",
   },
-  
+
   // Configure nuxt-xui
   nuxtXui: {
-    version: '1.0.0',
-    logoURL: 'https://your-site.com'
-  }
-})
+    version: "1.0.0",
+    logoURL: "https://your-site.com",
+  },
+});
 ```
 
 ## Why This Matters
 
 ### 1. **Avoids Version Conflicts**
+
 If the parent app uses `@nuxt/ui@2.21.0` and we try to install `@nuxt/ui@2.20.0`, there would be conflicts.
 
 ### 2. **Prevents Duplicate Registrations**
+
 Installing the same module twice (once by parent, once by us) can cause:
+
 - Duplicate components
 - Double-registered stores
 - Conflicting configurations
 
 ### 3. **Respects Parent Configuration**
+
 The parent app might have custom i18n settings. We hook into their setup instead of overriding it.
 
 ### 4. **Cleaner Module Resolution**
+
 Each module is installed once at the parent level, making the `node_modules` structure cleaner.
 
 ## Troubleshooting
@@ -105,6 +110,7 @@ Each module is installed once at the parent level, making the `node_modules` str
 **Cause:** Peer dependencies not installed.
 
 **Solution:** Install peer dependencies first:
+
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 ```
@@ -113,7 +119,7 @@ npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 
 **Cause:** Wrong module order in `nuxt.config.ts`.
 
-**Solution:** Ensure `@nuxt-xui/layout-ui` is the **last** module in the array.
+**Solution:** Ensure `@nuxt-xui` is the **last** module in the array.
 
 ### Components Not Auto-Importing
 
@@ -142,12 +148,12 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options, nuxt) {
     // Add our components
     await addComponentsDir({...});
-    
+
     // Hook into i18n (if it exists)
     nuxt.hook('i18n:registerModule', (register) => {
       register({ locales: [...] });
     });
-    
+
     // Configure Nuxt UI (if it exists)
     if (nuxt.options.ui) {
       nuxt.options.ui.icons = [...];
@@ -162,14 +168,15 @@ Components are registered globally with no prefix:
 
 ```ts
 await addComponentsDir({
-  path: resolver.resolve('./runtime/components'),
+  path: resolver.resolve("./runtime/components"),
   pathPrefix: false,
-  prefix: '',        // No prefix - components use their folder names
-  global: true       // Auto-imported globally
+  prefix: "", // No prefix - components use their folder names
+  global: true, // Auto-imported globally
 });
 ```
 
 This means:
+
 - `Auth/Login.vue` → `<AuthLogin />`
 - `Common/BtnGradient.vue` → `<CommonBtnGradient />`
 - `Layout/Header.vue` → `<LayoutHeader />`
