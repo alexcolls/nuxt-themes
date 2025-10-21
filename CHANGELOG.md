@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.2.2 - 2025-10-21
+
+### 📚 Documentation
+
+- Added MIT LICENSE file
+- Improved License section in README with full text
+- Enhanced Credits section with "Built With" and "Acknowledgments"
+- Added comprehensive Contributing guidelines
+- Added Support section with ways to help
+- Added Links section for easy navigation
+- Improved Development section with setup instructions
+- Made documentation more open source friendly
+
+### 🛠️ Infrastructure
+
+- Repository now fully open source ready
+- Clear contribution guidelines
+- Professional documentation structure
+
 ## v0.2.1 - 2025-10-21
 
 ### 🔧 Fixes

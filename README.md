@@ -470,24 +470,136 @@ ui.addVideo("https://example.com/another-video.mp4");
 
 ## Development
 
+### Setup
+
 ```bash
-# Install dependencies
+# Clone the repository
+git clone https://github.com/alexcolls/nuxt-xui.git
+cd nuxt-xui
+
+# Install dependencies (uses .npmrc with legacy-peer-deps)
 npm install
 
-# Develop with playground
+# Install playground dependencies
+cd playground
+npm install --legacy-peer-deps
+cd ..
+
+# Prepare development environment
+npx nuxt-module-build build --stub
+cd playground && npx nuxi prepare && cd ..
+```
+
+### Development Commands
+
+```bash
+# Start development server
+npm start
+# or
 npm run dev
 
 # Build the module
 npm run prepack
 
+# Run linter
+npm run lint
+
 # Run tests
 npm test
+
+# Type check
+npm run test:types
 ```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+### How to Contribute
+
+1. **Fork the repository**
+2. **Create your feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your changes** (`git commit -m '✨ Add some AmazingFeature'`)
+4. **Push to the branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Guidelines
+
+- Follow the existing code style
+- Write meaningful commit messages (use emojis ✨)
+- Add tests for new features
+- Update documentation as needed
+- Ensure all tests pass before submitting PR
+
+### Reporting Issues
+
+Found a bug? Have a feature request?
+
+- Check if the issue already exists
+- Use the issue templates
+- Provide detailed information and reproduction steps
 
 ## License
 
-MIT License
+[MIT License](./LICENSE)
+
+Copyright (c) 2025 [Alex Colls](https://github.com/alexcolls)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Credits
 
-Extracted from the docai project and transformed into a reusable Nuxt module.
+This project was extracted from the [docai](https://github.com/alexcolls/docai) project and transformed into a standalone, reusable Nuxt module.
+
+### Built With
+
+- [Nuxt 3](https://nuxt.com/) - The Intuitive Vue Framework
+- [Nuxt UI](https://ui.nuxt.com/) - Fully styled and customizable components
+- [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
+- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [Pinia](https://pinia.vuejs.org/) - The Vue Store
+- [i18n](https://i18n.nuxtjs.org/) - Internationalization
+
+### Acknowledgments
+
+- Original components from the docai project
+- Nuxt community for the amazing ecosystem
+- All contributors who help improve this module
+
+## Support
+
+If you find this project useful, please consider:
+
+- ⭐ Starring the repository
+- 🐛 Reporting bugs
+- 💡 Suggesting new features
+- 👤 Contributing code
+- 💬 Sharing with others
+
+## Links
+
+- [GitHub Repository](https://github.com/alexcolls/nuxt-xui)
+- [Documentation](./README.md)
+- [Issue Tracker](https://github.com/alexcolls/nuxt-xui/issues)
+- [Changelog](./CHANGELOG.md)
+
+---
+
+Made with ❤️ by [Alex Colls](https://github.com/alexcolls)

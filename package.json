@@ -1,9 +1,35 @@
 {
-  "name": "@nuxt-xui",
-  "version": "0.2.1",
+  "name": "@nuxt-xui/layout-ui",
+  "version": "0.2.2",
   "description": "A Nuxt UI module providing reusable Layout and Common components",
-  "repository": "your-username/nuxt-xui",
+  "author": {
+    "name": "Alex Colls",
+    "url": "https://github.com/alexcolls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexcolls/nuxt-xui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexcolls/nuxt-xui/issues"
+  },
+  "homepage": "https://github.com/alexcolls/nuxt-xui#readme",
   "license": "MIT",
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "nuxt4",
+    "nuxt-module",
+    "ui",
+    "components",
+    "vue",
+    "vue3",
+    "tailwind",
+    "pinia",
+    "i18n",
+    "dark-mode",
+    "typescript"
+  ],
   "type": "module",
   "exports": {
     ".": {
