@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.2.1 - 2025-10-21
+
+### 🔧 Fixes
+
+- Added `.npmrc` with `legacy-peer-deps=true` to handle peer dependency conflicts
+- Fixed vitest version conflict (@nuxt/test-utils compatibility)
+- Updated dependencies to support both Nuxt 3 and Nuxt 4
+
+### ✨ Features
+
+- **Nuxt 4 Compatibility** - Module now supports both Nuxt 3 and Nuxt 4
+- Flexible peer dependency versions for future compatibility
+- Updated @nuxt/test-utils to v3.19.2
+- Updated vitest to support v2.1.0 || v3.0.0
+
+### 📝 Documentation
+
+- Updated installation instructions with `--legacy-peer-deps` flag
+- Added alternative `.npmrc` setup method
+- Documented Nuxt 3 & Nuxt 4 compatibility
+
 ## v0.2.0 - 2025-10-21
 
 ### ✨ Features

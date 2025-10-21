@@ -15,25 +15,43 @@ A Nuxt 3 module providing reusable Layout and Common UI components built with Nu
 
 ## Installation
 
+**Compatibility:** Nuxt 3 & Nuxt 4 ✅
+
 ### 1. Install Required Dependencies
 
 This module has **peer dependencies** that must be installed in your parent Nuxt app first:
 
 ```bash
-npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+npm install --legacy-peer-deps @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 ```
+
+> **Note:** Use `--legacy-peer-deps` flag or create a `.npmrc` file with `legacy-peer-deps=true` to avoid peer dependency conflicts.
 
 ### 2. Install Icon Collections
 
 Install the required icon collections:
 
 ```bash
-npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
+npm install --legacy-peer-deps @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
 ```
 
 ### 3. Install the Module
 
 ```bash
+npm install --legacy-peer-deps @nuxt-xui/layout-ui
+```
+
+**Or create a `.npmrc` file** in your project root:
+
+```
+legacy-peer-deps=true
+```
+
+Then install normally:
+
+```bash
+npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
 npm install @nuxt-xui/layout-ui
 ```
 

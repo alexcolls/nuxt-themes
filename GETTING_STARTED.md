@@ -1,11 +1,21 @@
 # Getting Started with Nuxt XUI
 
+**Compatibility:** Nuxt 3 & Nuxt 4 ✅
+
 ## Quick Start
 
 ### 1. Install Dependencies
 
+The project includes a `.npmrc` file with `legacy-peer-deps=true`, so you can install normally:
+
 ```bash
 npm install
+```
+
+Or if you prefer to be explicit:
+
+```bash
+npm install --legacy-peer-deps
 ```
 
 ### 2. Prepare Development Environment
