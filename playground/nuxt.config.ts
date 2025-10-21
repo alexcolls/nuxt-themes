@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   modules: ['../src/module'],
   devtools: { enabled: true },
   
-  nuxtThemes: {
+  nuxtXui: {
     version: '0.1.0',
     logoURL: 'https://nuxt.com'
   },
