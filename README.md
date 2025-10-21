@@ -15,34 +15,53 @@ A Nuxt 3 module providing reusable Layout and Common UI components built with Nu
 
 ## Installation
 
-```bash
-npm install @nuxt-xui/layout-ui
-```
+### 1. Install Required Dependencies
 
-### Peer Dependencies
-
-This module requires the following peer dependencies:
+This module has **peer dependencies** that must be installed in your parent Nuxt app first:
 
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 ```
 
-You'll also need to install the required icon collections:
+### 2. Install Icon Collections
+
+Install the required icon collections:
 
 ```bash
 npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
 ```
 
-## Quick Start
+### 3. Install the Module
 
-1. Add the module to your `nuxt.config.ts`:
+```bash
+npm install @nuxt-xui/layout-ui
+```
+
+### 4. Configure Your App
+
+Add the required modules and nuxt-xui to your `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
   modules: [
-    '@nuxt-xui/layout-ui'
+    '@nuxt/ui',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    '@nuxt-xui/layout-ui'  // Add this LAST
   ],
   
+  // Configure i18n
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'es', iso: 'es-ES', name: 'Español' },
+      { code: 'fr', iso: 'fr-FR', name: 'Français' }
+    ],
+    defaultLocale: 'en'
+  },
+  
+  // Configure nuxt-xui
   nuxtXui: {
     version: '1.0.0',
     logoURL: 'https://your-site.com'
@@ -50,7 +69,11 @@ export default defineNuxtConfig({
 })
 ```
 
-2. Use components in your app:
+**Important:** Add `@nuxt-xui/layout-ui` as the **last module** in the modules array to avoid conflicts.
+
+## Quick Start
+
+Once installed and configured, all components are auto-imported and ready to use:
 
 ```vue
 <template>

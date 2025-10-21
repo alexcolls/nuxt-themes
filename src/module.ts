@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, addImportsDir, createResolver, installModule } from '@nuxt/kit';
+import { defineNuxtModule, addComponentsDir, addImportsDir, createResolver } from '@nuxt/kit';
 
 export interface ModuleOptions {
   /**
@@ -60,31 +60,30 @@ export default defineNuxtModule<ModuleOptions>({
     // Add stores
     addImportsDir(resolver.resolve('./runtime/stores'));
 
-    // Ensure peer dependencies are installed
-    await installModule('@nuxt/ui');
-    await installModule('@nuxtjs/i18n', {
-      langDir: resolver.resolve('./runtime/locales'),
-      locales: [
-        { code: 'en', iso: 'en-US', file: 'en.ts', name: 'English' },
-        { code: 'es', iso: 'es-ES', file: 'es.ts', name: 'Español' },
-        { code: 'fr', iso: 'fr-FR', file: 'fr.ts', name: 'Français' }
-      ],
-      defaultLocale: 'en',
-      strategy: 'no_prefix'
+    // Add locales for i18n (if i18n is installed by parent)
+    nuxt.hook('i18n:registerModule', (register) => {
+      register({
+        langDir: resolver.resolve('./runtime/locales'),
+        locales: [
+          { code: 'en', iso: 'en-US', file: 'en.ts', name: 'English' },
+          { code: 'es', iso: 'es-ES', file: 'es.ts', name: 'Español' },
+          { code: 'fr', iso: 'fr-FR', file: 'fr.ts', name: 'Français' }
+        ]
+      });
     });
-    await installModule('@pinia/nuxt');
-    await installModule('@pinia-plugin-persistedstate/nuxt');
 
-    // Configure @nuxt/ui icons
-    nuxt.options.ui = nuxt.options.ui || {};
-    nuxt.options.ui.icons = [
-      'heroicons',
-      'svg-spinners',
-      'pepicons-pop',
-      'material-symbols',
-      'circle-flags',
-      'line-md',
-      ...(nuxt.options.ui.icons || [])
-    ];
+    // Configure @nuxt/ui icons (if Nuxt UI is installed by parent)
+    if (nuxt.options.ui) {
+      const existingIcons = nuxt.options.ui.icons || [];
+      nuxt.options.ui.icons = [
+        'heroicons',
+        'svg-spinners',
+        'pepicons-pop',
+        'material-symbols',
+        'circle-flags',
+        'line-md',
+        ...existingIcons
+      ];
+    }
   }
 });
