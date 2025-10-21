@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.3.0 - 2025-10-21
+
+### ⬆️ Major Upgrade
+
+- **Upgraded to Nuxt 4** as primary version
+- Updated `@nuxt/kit` to `^4.0.0`
+- Updated `@nuxt/schema` to `^4.0.0`
+- Updated `nuxt` to `^4.0.0`
+- Playground now uses Nuxt 4
+- Module still maintains backward compatibility with Nuxt 3 via peer dependencies
+
+### 🔧 Changes
+
+- Development now defaults to Nuxt 4
+- All dependencies updated to latest Nuxt 4 compatible versions
+- Testing and CI/CD updated for Nuxt 4
+
 ## v0.2.2 - 2025-10-21
 
 ### 📚 Documentation

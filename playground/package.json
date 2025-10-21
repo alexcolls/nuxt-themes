@@ -21,6 +21,6 @@
     "@iconify-json/material-symbols": "^1.1.61"
   },
   "devDependencies": {
-    "nuxt": "^3.12.1"
+    "nuxt": "^4.0.0"
   }
 }

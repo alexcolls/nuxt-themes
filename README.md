@@ -1,6 +1,8 @@
-# @nuxt-xui
+# @nuxt-xui/layout-ui
 
-A Nuxt 3 module providing reusable Layout and Common UI components built with Nuxt UI.
+A comprehensive Nuxt 4 module providing reusable Layout and Common UI components built with Nuxt UI.
+
+> **Compatibility:** Nuxt 4 (primary) | Nuxt 3 (supported) ✅
 
 ## Features
 
@@ -16,6 +18,9 @@ A Nuxt 3 module providing reusable Layout and Common UI components built with Nu
 ## Installation
 
 **Compatibility:** Nuxt 3 & Nuxt 4 ✅
+
+> 📖 **Quick Reference:** See [INSTALL.md](./docs/INSTALL.md) for a condensed installation guide  
+> 🔧 **Architecture Details:** Read [DEPENDENCY_ISOLATION.md](./docs/DEPENDENCY_ISOLATION.md) to understand how this module manages dependencies
 
 ### 1. Install Required Dependencies
 
@@ -470,6 +475,8 @@ ui.addVideo("https://example.com/another-video.mp4");
 
 ## Development
 
+> 🚀 **Getting Started Guide:** See [GETTING_STARTED.md](./docs/GETTING_STARTED.md) for a complete developer guide
+
 ### Setup
 
 ```bash
@@ -565,10 +572,6 @@ SOFTWARE.
 
 ## Credits
 
-This project was extracted from the [docai](https://github.com/alexcolls/docai) project and transformed into a standalone, reusable Nuxt module.
-
-### Built With
-
 - [Nuxt 3](https://nuxt.com/) - The Intuitive Vue Framework
 - [Nuxt UI](https://ui.nuxt.com/) - Fully styled and customizable components
 - [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
@@ -579,7 +582,6 @@ This project was extracted from the [docai](https://github.com/alexcolls/docai) 
 
 ### Acknowledgments
 
-- Original components from the docai project
 - Nuxt community for the amazing ecosystem
 - All contributors who help improve this module
 
@@ -595,10 +597,18 @@ If you find this project useful, please consider:
 
 ## Links
 
+### Repository
+
 - [GitHub Repository](https://github.com/alexcolls/nuxt-xui)
-- [Documentation](./README.md)
 - [Issue Tracker](https://github.com/alexcolls/nuxt-xui/issues)
 - [Changelog](./CHANGELOG.md)
+
+### Documentation
+
+- [README](./README.md) - Complete documentation and API reference
+- [Installation Guide](./docs/INSTALL.md) - Quick installation steps
+- [Getting Started](./docs/GETTING_STARTED.md) - Developer guide for contributors
+- [Dependency Isolation](./docs/DEPENDENCY_ISOLATION.md) - Architecture explanation
 
 ---
 
