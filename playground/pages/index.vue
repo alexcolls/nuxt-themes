@@ -91,7 +91,7 @@
             </div>
             
             <div class="flex justify-center">
-              <NuxtLink to="/login">
+              <NuxtLink to="/example">
                 <CommonBtnGradient icon="i-heroicons-arrow-right-circle">
                   View Login Example
                 </CommonBtnGradient>
@@ -110,8 +110,8 @@
 <script setup lang="ts">
 const { auth } = useStore();
 
-// Redirect to login if not authenticated
+// Redirect to example if not authenticated
 if (!auth.isAuth) {
-  navigateTo('/login');
+  navigateTo('/example');
 }
 </script>

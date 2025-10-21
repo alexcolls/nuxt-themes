@@ -46,7 +46,7 @@ The playground includes two example pages:
 - Features dark mode support
 - Includes component examples
 
-#### 2. **Login Page** (`/login`)
+#### 2. **Example Page** (`/example`)
 - Full-featured animated login form based on the docai project
 - Progressive form reveal on hover
 - Username and password validation
@@ -103,7 +103,7 @@ No backend is required for testing!
 
 ## Next Steps
 
-1. **Explore the playground**: Navigate between `/` and `/login` to see components in action
+1. **Explore the playground**: Navigate between `/` and `/example` to see components in action
 2. **Customize**: Modify the playground pages to test your own implementations
 3. **Read the docs**: Check `README.md` for full API documentation
 4. **Create your app**: Install `@nuxt-xui/layout-ui` in your own Nuxt project
