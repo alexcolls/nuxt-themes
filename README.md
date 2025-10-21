@@ -1,6 +1,8 @@
 # @nuxt-xui/layout-ui
 
-A comprehensive Nuxt 4 module providing reusable Layout and Common UI components built with Nuxt UI.
+An **independent, reusable** Nuxt 4 module providing Layout and Common UI components built with Nuxt UI.
+
+> **Independent Module:** This module can be used in any Nuxt 3+ or Nuxt 4 project, completely separate from the quami application.
 
 > **Compatibility:** Nuxt 4 (primary) | Nuxt 3 (supported) ✅
 
@@ -22,37 +24,68 @@ A comprehensive Nuxt 4 module providing reusable Layout and Common UI components
 > 📖 **Quick Reference:** See [INSTALL.md](./docs/INSTALL.md) for a condensed installation guide  
 > 🔧 **Architecture Details:** Read [DEPENDENCY_ISOLATION.md](./docs/DEPENDENCY_ISOLATION.md) to understand how this module manages dependencies
 
+### Runtime Support
+
+This module works with Nuxt 3+ and Nuxt 4 on multiple JavaScript runtimes:
+
+- **Bun** (recommended - default used by alexcolls) - Fast all-in-one JavaScript runtime
+- **Deno** - Secure TypeScript/JavaScript runtime
+- **Node.js** - Traditional JavaScript runtime
+
+**Note:** All installation commands below show alternatives for Bun (recommended), Deno, and npm. Choose your preferred runtime.
+
 ### 1. Install Required Dependencies
 
 This module has **peer dependencies** that must be installed in your parent Nuxt app first:
 
 ```bash
+# Using Bun (recommended)
+bun add @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+
+# Using Deno
+deno add npm:@nuxt/ui npm:@nuxtjs/i18n npm:@pinia/nuxt npm:@pinia-plugin-persistedstate/nuxt
+
+# Using npm (Node.js)
 npm install --legacy-peer-deps @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 ```
 
-> **Note:** Use `--legacy-peer-deps` flag or create a `.npmrc` file with `legacy-peer-deps=true` to avoid peer dependency conflicts.
+> **Note (npm users):** Use `--legacy-peer-deps` flag or create a `.npmrc` file with `legacy-peer-deps=true` to avoid peer dependency conflicts when using npm.
 
 ### 2. Install Icon Collections
 
 Install the required icon collections:
 
 ```bash
+# Using Bun (recommended)
+bun add @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
+
+# Using Deno
+deno add npm:@iconify-json/heroicons npm:@iconify-json/line-md npm:@iconify-json/circle-flags npm:@iconify-json/svg-spinners npm:@iconify-json/pepicons-pop npm:@iconify-json/material-symbols
+
+# Using npm (Node.js)
 npm install --legacy-peer-deps @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
 ```
 
 ### 3. Install the Module
 
 ```bash
+# Using Bun (recommended)
+bun add @nuxt-xui
+
+# Using Deno
+deno add npm:@nuxt-xui
+
+# Using npm (Node.js)
 npm install --legacy-peer-deps @nuxt-xui
 ```
 
-**Or create a `.npmrc` file** in your project root:
+**Or (for npm users) create a `.npmrc` file** in your project root:
 
 ```
 legacy-peer-deps=true
 ```
 
-Then install normally:
+Then install normally with npm:
 
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
@@ -484,38 +517,38 @@ ui.addVideo("https://example.com/another-video.mp4");
 git clone https://github.com/alexcolls/nuxt-xui.git
 cd nuxt-xui
 
-# Install dependencies (uses .npmrc with legacy-peer-deps)
-npm install
+# Install dependencies
+bun install   # or: deno install, npm install
 
 # Install playground dependencies
 cd playground
-npm install --legacy-peer-deps
+bun install   # or: deno install, npm install --legacy-peer-deps
 cd ..
 
 # Prepare development environment
-npx nuxt-module-build build --stub
-cd playground && npx nuxi prepare && cd ..
+bun x nuxt-module-build build --stub   # or: deno run -A npm:nuxt-module-build build --stub, npx nuxt-module-build build --stub
+cd playground && bun x nuxi prepare && cd ..   # or: deno run -A npm:nuxi prepare, npx nuxi prepare
 ```
 
 ### Development Commands
 
 ```bash
 # Start development server
-npm start
+bun start     # or: deno task start, npm start
 # or
-npm run dev
+bun run dev   # or: deno task dev, npm run dev
 
 # Build the module
-npm run prepack
+bun run prepack   # or: deno task prepack, npm run prepack
 
 # Run linter
-npm run lint
+bun run lint   # or: deno task lint, npm run lint
 
 # Run tests
-npm test
+bun test   # or: deno test, npm test
 
 # Type check
-npm run test:types
+bun run test:types   # or: deno task test:types, npm run test:types
 ```
 
 ## Contributing
@@ -548,27 +581,35 @@ Found a bug? Have a feature request?
 
 ## License
 
-[MIT License](./LICENSE)
+**Dual License** - This module is available under two licenses:
 
-Copyright (c) 2025 [Alex Colls](https://github.com/alexcolls)
+### Non-Commercial / Personal Use
+For personal, educational, and non-commercial use, this software is licensed under the **Apache License 2.0**.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+You are free to:
+- Use, copy, and modify the software
+- Distribute the software
+- Use it for personal projects and learning
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+### Commercial / Business Use
+For commercial use, including:
+- Use in commercial products or services
+- Use by for-profit organizations
+- Use that generates revenue or commercial advantage
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+You **MUST obtain a separate commercial license**.
+
+**To obtain a commercial license, contact:**
+- Alex Colls: [github.com/alexcolls](https://github.com/alexcolls)
+
+### Disclaimer
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+See the [LICENSE](./LICENSE) file for full terms.
+
+---
+
+**Copyright (c) 2025 Alex Colls**
 
 ## Credits
 
