@@ -1,6 +1,6 @@
 # @nuxt-themes/layout-ui
 
-A comprehensive Nuxt 3 module providing reusable Layout and Common UI components built with Nuxt UI.
+A Nuxt 3 module providing reusable Layout and Common UI components built with Nuxt UI.
 
 ## Features
 
