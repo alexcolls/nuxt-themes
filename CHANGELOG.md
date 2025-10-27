@@ -2,6 +2,88 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.4.0 - 2025-10-27
+
+### 🔄 BREAKING CHANGES
+
+- **Package renamed**: `@nuxt-xui` → `@alexcolls/nuxt-xui` (properly scoped for NPM)
+- **Removed Pinia dependency**: Now uses Nuxt's built-in `useState()` for state management
+- **Composable names changed**:
+  - `useStore()` → `useNuxtXuiStore()`
+  - `useLangs()` → `useNuxtXuiLangs()`
+- **No longer requires**: `@pinia/nuxt` and `@pinia-plugin-persistedstate/nuxt`
+
+### ✨ New Features
+
+- **Nuxt useState() state management**: SSR-safe state without external dependencies
+- **Proper runtime folder structure**: All components in `src/runtime/components/`
+- **i18n locale files**: Built-in translations (English, Spanish, French)
+- **TypeScript types**: Comprehensive type definitions for all state interfaces
+- **Test suite**: Professional Vitest tests for Layout components
+  - Header, Footer, Logo component tests
+  - Theme button tests (Light, Lang, Auth, Color, Audio, Video)
+  - SSR compatibility verification
+
+### 📄 License
+
+- Changed to **MIT License** (from dual license)
+- Full open source permissive license
+
+### 🛠️ Infrastructure
+
+- Added `vitest.config.ts` for module testing
+- Added `.npmignore` for clean package distribution
+- Updated `publishConfig` for public NPM access
+- All 54 components refactored to use new composables
+
+### 📚 Documentation
+
+- Updated README with new package name
+- Documented useState() state management approach
+- Updated installation instructions
+- Removed Pinia references throughout
+
+### 🔧 Configuration
+
+- Module name updated to `@alexcolls/nuxt-xui`
+- Simplified peer dependencies (only @nuxt/ui and @nuxtjs/i18n)
+- Enhanced keywords for better NPM discoverability
+
+### 📦 Migration Guide
+
+**From v0.3.0 to v0.4.0:**
+
+1. Update package name:
+   ```bash
+   npm uninstall @nuxt-xui
+   npm install @alexcolls/nuxt-xui
+   ```
+
+2. Remove Pinia dependencies:
+   ```bash
+   npm uninstall @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+   ```
+
+3. Update `nuxt.config.ts` modules array:
+   ```ts
+   modules: [
+     '@nuxt/ui',
+     '@nuxtjs/i18n',
+     '@alexcolls/nuxt-xui', // Updated name, no Pinia needed
+   ]
+   ```
+
+4. Update composable imports in your code:
+   ```ts
+   // Before
+   const { ui, auth, app } = useStore();
+   const langs = useLangs();
+   
+   // After
+   const { ui, auth, app } = useNuxtXuiStore();
+   const langs = useNuxtXuiLangs();
+   ```
+
 ## v0.3.0 - 2025-10-21
 
 ### ⬆️ Major Upgrade
