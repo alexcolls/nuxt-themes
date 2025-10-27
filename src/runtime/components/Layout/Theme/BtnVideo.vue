@@ -129,7 +129,7 @@
 
 <script setup lang="ts">
 
-const { ui } = useStore();
+const { ui } = useNuxtXuiStore();
 
 watch(() => ui.iVideo, (newIndex) => {
   if (newIndex < 0) {

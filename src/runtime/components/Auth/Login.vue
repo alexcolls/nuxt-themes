@@ -106,7 +106,7 @@ const props = defineProps<{
   onLogin?: (user: string, pass: string) => Promise<boolean>;
 }>();
 
-const { ui } = useStore();
+const { ui } = useNuxtXuiStore();
 
 const state = reactive({
   user: '',

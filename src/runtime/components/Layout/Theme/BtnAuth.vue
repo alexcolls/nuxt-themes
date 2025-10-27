@@ -31,8 +31,8 @@
 
 <script setup lang="ts">
 
-const { ui, auth } = useStore();
-const langs = useLangs();
+const { ui, auth } = useNuxtXuiStore();
+const langs = useNuxtXuiLangs();
 const { locale } = useI18n();
 
 locale.value = ui.locale;

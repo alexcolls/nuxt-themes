@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 
-const { ui } = useStore();
+const { ui } = useNuxtXuiStore();
 
 const audioSteps = 0.01;
 

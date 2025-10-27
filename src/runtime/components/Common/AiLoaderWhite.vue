@@ -30,6 +30,6 @@
 
 <script setup lang="ts">
 
-const { app } = useStore();
+const { ui } = useNuxtXuiStore();
 
 </script>

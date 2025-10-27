@@ -119,7 +119,7 @@ const props = defineProps<{
   downloadUrl?: string;
 }>();
 
-const { auth } = useStore();
+const { ui } = useNuxtXuiStore();
 const { downloadFile } = useAlerts();
 
 const imageSrc = ref<string | null>(null);
