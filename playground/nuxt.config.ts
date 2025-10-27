@@ -2,8 +2,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxtjs/i18n',
-    '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
     '../src/module'  // nuxt-xui module LAST to avoid conflicts
   ],
   
