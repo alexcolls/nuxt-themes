@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-const { ui, auth } = useStore();
+const { ui, auth } = useNuxtXuiStore();
 
 // Check if already authenticated
 if (auth.isAuth) {

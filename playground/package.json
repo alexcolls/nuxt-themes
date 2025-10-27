@@ -11,8 +11,6 @@
   "dependencies": {
     "@nuxt/ui": "^2.21.0",
     "@nuxtjs/i18n": "^8.3.1",
-    "@pinia/nuxt": "^0.5.1",
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@iconify-json/heroicons": "^1.2.1",
     "@iconify-json/line-md": "^1.2.5",
     "@iconify-json/circle-flags": "^1.2.5",
