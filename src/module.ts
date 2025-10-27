@@ -22,7 +22,7 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@nuxt-xui',
+    name: '@alexcolls/nuxt-xui',
     configKey: 'nuxtXui',
     compatibility: {
       nuxt: '^3.0.0 || ^4.0.0'
@@ -65,9 +65,9 @@ export default defineNuxtModule<ModuleOptions>({
       register({
         langDir: resolver.resolve('./runtime/locales'),
         locales: [
-          { code: 'en', iso: 'en-US', file: 'en.ts', name: 'English' },
-          { code: 'es', iso: 'es-ES', file: 'es.ts', name: 'Español' },
-          { code: 'fr', iso: 'fr-FR', file: 'fr.ts', name: 'Français' }
+          { code: 'en', file: 'en.ts' },
+          { code: 'es', file: 'es.ts' },
+          { code: 'fr', file: 'fr.ts' }
         ]
       });
     });
