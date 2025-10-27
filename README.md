@@ -1,4 +1,4 @@
-# @nuxt-xui/layout-ui
+# @nuxt-xui
 
 An **independent, reusable** Nuxt 4 module providing Layout and Common UI components built with Nuxt UI.
 
@@ -584,15 +584,19 @@ Found a bug? Have a feature request?
 **Dual License** - This module is available under two licenses:
 
 ### Non-Commercial / Personal Use
+
 For personal, educational, and non-commercial use, this software is licensed under the **Apache License 2.0**.
 
 You are free to:
+
 - Use, copy, and modify the software
 - Distribute the software
 - Use it for personal projects and learning
 
 ### Commercial / Business Use
+
 For commercial use, including:
+
 - Use in commercial products or services
 - Use by for-profit organizations
 - Use that generates revenue or commercial advantage
@@ -600,9 +604,11 @@ For commercial use, including:
 You **MUST obtain a separate commercial license**.
 
 **To obtain a commercial license, contact:**
+
 - Alex Colls: [github.com/alexcolls](https://github.com/alexcolls)
 
 ### Disclaimer
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 See the [LICENSE](./LICENSE) file for full terms.
