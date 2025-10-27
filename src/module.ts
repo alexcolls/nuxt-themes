@@ -57,9 +57,6 @@ export default defineNuxtModule<ModuleOptions>({
     // Add composables
     addImportsDir(resolver.resolve('./runtime/composables'));
 
-    // Add stores
-    addImportsDir(resolver.resolve('./runtime/stores'));
-
     // Add locales for i18n (if i18n is installed by parent)
     nuxt.hook('i18n:registerModule', (register) => {
       register({

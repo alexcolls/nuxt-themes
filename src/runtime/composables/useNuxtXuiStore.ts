@@ -23,14 +23,16 @@ export function useNuxtXuiStore(): NuxtXuiStore {
   }));
 
   // Auth State - Authentication and user management
-  const auth = useState<NuxtXuiAuthState>('nuxt-xui-auth', () => ({
+  const auth = useState<Omit<NuxtXuiAuthState, 'logout'>>('nuxt-xui-auth', () => ({
     isAuth: false,
     user: null,
-    logout: () => {
-      auth.value.isAuth = false;
-      auth.value.user = null;
-    },
   }));
+
+  // Logout function (not serialized in state)
+  const logout = () => {
+    auth.value.isAuth = false;
+    auth.value.user = null;
+  };
 
   // App State - Application-level state (menus, modals, etc.)
   const app = useState<NuxtXuiAppState>('nuxt-xui-app', () => ({
@@ -63,7 +65,7 @@ export function useNuxtXuiStore(): NuxtXuiStore {
 
   return {
     ui: uiWithHelpers as NuxtXuiUIState,
-    auth: auth.value,
+    auth: { ...auth.value, logout },
     app: app.value,
   };
 }
