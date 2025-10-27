@@ -1,0 +1,36 @@
+# Test files
+test/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Development files
+playground/
+docs/
+.github/
+
+# Build artifacts
+node_modules/
+*.log
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git files
+.git/
+.gitignore
+
+# Environment files
+.env
+.env.*
+
+# Temporary files
+*.tmp
+.DS_Store
+
+# Source maps (optional - uncomment if you don't want to include them)
+# *.map
