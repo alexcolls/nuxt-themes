@@ -49,7 +49,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Register components
     await addComponentsDir({
       path: resolver.resolve('./runtime/components'),
-      pathPrefix: false,
+      pathPrefix: true,
       prefix: '',
       global: true
     });

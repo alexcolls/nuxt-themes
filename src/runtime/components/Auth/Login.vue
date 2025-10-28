@@ -34,7 +34,6 @@
     <transition name="fade">
       <UForm
         v-if="isHovered"
-        :schema="schema"
         :state="state"
         class="space-y-4 pt-4"
         @submit="onSubmit"
@@ -100,8 +99,6 @@
 </template>
 
 <script setup lang="ts">
-import { z } from 'zod';
-
 const props = defineProps<{
   onLogin?: (user: string, pass: string) => Promise<boolean>;
 }>();
@@ -135,11 +132,6 @@ const panelHeight = computed(() => {
     return validPassword.value ? '360px' : '280px';
   }
   return '220px';
-});
-
-const schema = z.object({
-  user: z.string(),
-  pass: z.string()
 });
 
 const loginTime = 2000;
