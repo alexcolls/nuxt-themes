@@ -10,11 +10,12 @@ export default defineNuxtConfig({
   // i18n configuration
   i18n: {
     locales: [
-      { code: 'en', language: 'en-US', name: 'English' },
-      { code: 'es', language: 'es-ES', name: 'Español' },
-      { code: 'fr', language: 'fr-FR', name: 'Français' }
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.ts' },
+      { code: 'es', language: 'es-ES', name: 'Español', file: 'es.ts' },
+      { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.ts' }
     ],
-    defaultLocale: 'en'
+    defaultLocale: 'en',
+    langDir: 'locales'
   },
   
   // nuxt-xui configuration
