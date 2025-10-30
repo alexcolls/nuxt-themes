@@ -1,21 +1,27 @@
-# @nuxt-ux
+# Nuxt UX 
 
-An **independent, reusable** Nuxt 4 module providing Layout and Common UI components built with Nuxt UI.
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
 
-> **Independent Module:** This module can be used in any Nuxt 3+ or Nuxt 4 project, completely separate from the quami application.
+An **independent, production-ready** Nuxt 3/4 module providing 80+ polished UI components built with Nuxt UI and Tailwind CSS.
 
-> **Compatibility:** Nuxt 4 (primary) | Nuxt 3 (supported) ✅
+> **Standalone Module:** Use in any Nuxt 3+ or Nuxt 4 project as a comprehensive UI component library.
 
-## Features
+> **Compatibility:** ✅ Nuxt 3 | ✅ Nuxt 4
 
-- 🎨 **50+ Ready-to-Use Components** - Auth, Layout, and Common components (Buttons, Loaders, Text, etc.)
-- 🌙 **Dark Mode Support** - Fully integrated theme switching with system preference detection
-- 🌍 **i18n Ready** - Multi-language support (English, Spanish, French)
-- 💾 **State Persistence** - Pinia stores with automatic state persistence
-- 🎯 **TypeScript** - Full TypeScript support
-- 🔧 **Highly Configurable** - Customize colors, themes, and behavior
-- ⚡ **Auto-Import** - All components and composables are auto-imported
-- 🔐 **Authentication UI** - Ready-to-use login components with animations
+## ✨ Features
+
+- 🎨 **80+ Ready-to-Use Components** - Auth, Layout, and Common UI components with consistent design
+- 🌙 **Dark Mode Support** - Seamless light/dark/system theme switching with state persistence  
+- 🌍 **i18n Ready** - Built-in multi-language support (English, Spanish, French)
+- 💾 **State Management** - Pinia stores with automatic persistence and reactive updates
+- 🎯 **TypeScript First** - Full TypeScript support with comprehensive type definitions
+- 🔧 **Highly Customizable** - Tailwind CSS theming with configurable colors and behavior
+- ⚡ **Auto-Import Everything** - Zero-config component and composable imports
+- 🔐 **Authentication UI** - Animated login forms with validation and state management
+- 🎬 **Media Components** - Video backgrounds, image viewers, and loading states
+- 🎭 **Special Effects** - Cursor light effects, animated loaders, and gradient components
 
 ## Installation
 
@@ -70,13 +76,13 @@ npm install --legacy-peer-deps @iconify-json/heroicons @iconify-json/line-md @ic
 
 ```bash
 # Using Bun (recommended)
-bun add @nuxt-ux
+bun add @alexcolls/nuxt-ux
 
 # Using Deno
-deno add npm:@nuxt-ux
+deno add npm:@alexcolls/nuxt-ux
 
 # Using npm (Node.js)
-npm install --legacy-peer-deps @nuxt-ux
+npm install --legacy-peer-deps @alexcolls/nuxt-ux
 ```
 
 **Or (for npm users) create a `.npmrc` file** in your project root:
@@ -90,7 +96,7 @@ Then install normally with npm:
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
-npm install @nuxt-ux
+npm install @alexcolls/nuxt-ux
 ```
 
 ### 4. Configure Your App
@@ -104,7 +110,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
-    "@nuxt-ux", // Add this LAST
+    "@alexcolls/nuxt-ux", // Add this LAST
   ],
 
   // Configure i18n
@@ -119,31 +125,87 @@ export default defineNuxtConfig({
 
   // Configure nuxt-ux
   nuxtUx: {
-    version: "1.0.0",
+    version: "0.5.0",
     logoURL: "https://your-site.com",
   },
 });
 ```
 
-**Important:** Add `@nuxt-ux` as the **last module** in the modules array to avoid conflicts.
+**Important:** Add `@alexcolls/nuxt-ux` as the **last module** in the modules array to avoid conflicts.
 
-## Quick Start
+## 🚀 Quick Start
 
 Once installed and configured, all components are auto-imported and ready to use:
 
+### Basic Layout
+
 ```vue
 <template>
-  <div>
+  <div class="min-h-screen">
     <UxLayoutHeader />
-    <main>
+    
+    <main class="pt-20">
       <UxCommonContainer>
-        <UxCommonTxtTitle>Welcome</UxCommonTxtTitle>
-        <UxCommonBtnGradient>Get Started</UxCommonBtnGradient>
+        <div class="py-12 space-y-8">
+          <div class="text-center space-y-4">
+            <UxCommonTxtTitle>Welcome to Your App</UxCommonTxtTitle>
+            <UxCommonTxtSubtitle>Built with Nuxt UX components</UxCommonTxtSubtitle>
+          </div>
+          
+          <UxCommonDividerX />
+          
+          <div class="flex flex-wrap gap-4 justify-center">
+            <UxCommonBtnGradient icon="i-heroicons-rocket-launch">
+              Get Started
+            </UxCommonBtnGradient>
+            <UxCommonBtnAccept>Save</UxCommonBtnAccept>
+            <UxCommonBtnCancel>Cancel</UxCommonBtnCancel>
+          </div>
+        </div>
       </UxCommonContainer>
     </main>
+    
     <UxLayoutFooter />
+    <UxCommonBtnScrollTop />
   </div>
 </template>
+```
+
+### Login Page Example
+
+```vue
+<template>
+  <div class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Optional background video -->
+    <UxLayoutBgVideo v-if="ui.showVideo && ui.videoURL" />
+    
+    <!-- Animated background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-gray-900/50 to-primary-900/20" />
+    
+    <!-- Login form -->
+    <div class="relative z-10">
+      <UxAuthLogin :on-login="handleLogin" />
+    </div>
+    
+    <!-- Optional cursor effect -->
+    <UxCommonCursorLight v-if="ui.flashlight" />
+  </div>
+</template>
+
+<script setup lang="ts">
+const { ui, auth } = useNuxtUxStore();
+
+const handleLogin = async (user: string, pass: string): Promise<boolean> => {
+  // Your login logic here
+  if (user.length > 3 && pass.length > 8) {
+    auth.isAuth = true;
+    auth.user = { name: user };
+    await navigateTo('/dashboard');
+    return true;
+  }
+  return false;
+};
+</script>
 ```
 
 ## Configuration
@@ -174,45 +236,66 @@ NUXT_PUBLIC_NUXT_XUI_VERSION=1.0.0
 NUXT_PUBLIC_NUXT_XUI_LOGO_URL=https://your-site.com
 ```
 
-## Components
+## 📚 Components Library
 
-All components are **auto-imported** and ready to use without any imports. Total: **50+ components**.
+All components are **auto-imported** and ready to use without any imports. Total: **80 components** organized into three main categories.
 
 ### 🔐 Authentication Components (1)
 
-| Component   | Description                                                                                     |
-| ----------- | ----------------------------------------------------------------------------------------------- |
-| `UxAuthLogin` | Full-featured animated login form with hover interactions, validation, and success/error states |
+| Component | Description | Props |
+|-----------|-------------|-------|
+| `UxAuthLogin` | Animated login form with hover reveal, validation states, and success/error animations | `onLogin: (user, pass) => Promise<boolean>` |
 
 **Example:**
-
 ```vue
-<UxAuthLogin :on-login="handleLogin" />
+<template>
+  <UxAuthLogin :on-login="handleLogin" />
+</template>
+
+<script setup>
+const handleLogin = async (user, pass) => {
+  // Return true for success, false for error
+  return await authenticate(user, pass);
+};
+</script>
 ```
 
-### 🎨 Layout Components (10)
+### 🏗️ Layout Components (8)
 
-| Component             | Description                                                 |
-| --------------------- | ----------------------------------------------------------- |
-| `UxLayoutHeader`        | Fixed header with logo and menu                             |
-| `UxLayoutFooter`        | Fixed footer with copyright and theme controls              |
-| `UxLayoutLogo`          | Configurable logo component (supports slot for custom logo) |
-| `UxLayoutTheme`         | Theme control panel                                         |
-| `UxLayoutThemeBtnLight` | Light/Dark/System theme switcher                            |
-| `UxLayoutThemeBtnLang`  | Language selector dropdown                                  |
-| `UxLayoutThemeBtnColor` | Primary color picker                                        |
-| `UxLayoutThemeBtnAudio` | Audio volume controls                                       |
-| `UxLayoutThemeBtnVideo` | Video background controls                                   |
-| `UxLayoutThemeBtnAuth`  | Authentication status display                               |
+| Component | Description | Key Features |
+|-----------|-------------|--------------|
+| `UxLayoutHeader` | Fixed header with logo and navigation | Auto-responsive, theme integration |
+| `UxLayoutFooter` | Footer with copyright and theme controls | Auto-year update, theme buttons |
+| `UxLayoutLogo` | Configurable logo with click action | Custom slot support |
+| `UxLayoutBgVideo` | Background video player | Volume control, opacity settings |
+| `UxLayoutBgVideoYoutube` | YouTube background video player | Embedded player support |
 
-**Example:**
+#### Theme Control Components (5)
 
+| Component | Description | Features |
+|-----------|-------------|----------|
+| `UxLayoutTheme` | Complete theme control panel | All theme controls in one |
+| `UxLayoutThemeBtnLight` | Light/Dark/System theme switcher | System preference detection |
+| `UxLayoutThemeBtnLang` | Language selector dropdown | Flag icons, persistence |
+| `UxLayoutThemeBtnColor` | Primary color picker | 10+ color options |
+| `UxLayoutThemeBtnAudio` | Audio volume controls | FX and video volume |
+| `UxLayoutThemeBtnVideo` | Video background controls | Play/pause, opacity |
+| `UxLayoutThemeBtnAuth` | Authentication status button | Login/logout actions |
+
+**Layout Example:**
 ```vue
-<UxLayoutHeader />
-<main>
-  <!-- Your content -->
-</main>
-<UxLayoutFooter />
+<template>
+  <div class="min-h-screen">
+    <UxLayoutHeader />
+    <main class="pt-20">
+      <!-- Your content -->
+    </main>
+    <UxLayoutFooter />
+    
+    <!-- Optional background video -->
+    <UxLayoutBgVideo v-if="showVideo" />
+  </div>
+</template>
 ```
 
 ### 🔘 Button Components (11)
