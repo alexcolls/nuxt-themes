@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxtjs/i18n',
-    '../src/module'  // nuxt-xui module LAST to avoid conflicts
+    '../src/module'  // nuxt-ux module LAST to avoid conflicts
   ],
   
   devtools: { enabled: true },
@@ -18,8 +18,8 @@ export default defineNuxtConfig({
     langDir: 'locales'
   },
   
-  // nuxt-xui configuration
-  nuxtXui: {
+  // nuxt-ux configuration
+  nuxtUx: {
     version: '0.2.0',
     logoURL: 'https://nuxt.com'
   },

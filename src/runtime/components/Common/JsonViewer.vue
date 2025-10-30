@@ -15,7 +15,7 @@ import { highlight, languages } from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-json';
 
-const { ui } = useNuxtXuiStore();
+const { ui } = useNuxtUxStore();
 
 const props = defineProps({
   jsonData: {

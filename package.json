@@ -1,5 +1,5 @@
 {
-  "name": "@alexcolls/nuxt-xui",
+  "name": "@alexcolls/nuxt-ux",
   "version": "0.3.0",
   "description": "Production-ready Nuxt 3/4 module with 50+ reusable UI components, built-in state management, dark mode, and i18n support",
   "author": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexcolls/nuxt-xui.git"
+    "url": "https://github.com/alexcolls/nuxt-ux.git"
   },
   "bugs": {
-    "url": "https://github.com/alexcolls/nuxt-xui/issues"
+    "url": "https://github.com/alexcolls/nuxt-ux/issues"
   },
-  "homepage": "https://github.com/alexcolls/nuxt-xui#readme",
+  "homepage": "https://github.com/alexcolls/nuxt-ux#readme",
   "license": "MIT",
   "keywords": [
     "nuxt",

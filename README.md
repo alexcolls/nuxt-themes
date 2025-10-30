@@ -1,4 +1,4 @@
-# @nuxt-xui
+# @nuxt-ux
 
 An **independent, reusable** Nuxt 4 module providing Layout and Common UI components built with Nuxt UI.
 
@@ -70,13 +70,13 @@ npm install --legacy-peer-deps @iconify-json/heroicons @iconify-json/line-md @ic
 
 ```bash
 # Using Bun (recommended)
-bun add @nuxt-xui
+bun add @nuxt-ux
 
 # Using Deno
-deno add npm:@nuxt-xui
+deno add npm:@nuxt-ux
 
 # Using npm (Node.js)
-npm install --legacy-peer-deps @nuxt-xui
+npm install --legacy-peer-deps @nuxt-ux
 ```
 
 **Or (for npm users) create a `.npmrc` file** in your project root:
@@ -90,12 +90,12 @@ Then install normally with npm:
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
-npm install @nuxt-xui
+npm install @nuxt-ux
 ```
 
 ### 4. Configure Your App
 
-Add the required modules and nuxt-xui to your `nuxt.config.ts`:
+Add the required modules and nuxt-ux to your `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
@@ -104,7 +104,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
-    "@nuxt-xui", // Add this LAST
+    "@nuxt-ux", // Add this LAST
   ],
 
   // Configure i18n
@@ -117,15 +117,15 @@ export default defineNuxtConfig({
     defaultLocale: "en",
   },
 
-  // Configure nuxt-xui
-  nuxtXui: {
+  // Configure nuxt-ux
+  nuxtUx: {
     version: "1.0.0",
     logoURL: "https://your-site.com",
   },
 });
 ```
 
-**Important:** Add `@nuxt-xui` as the **last module** in the modules array to avoid conflicts.
+**Important:** Add `@nuxt-ux` as the **last module** in the modules array to avoid conflicts.
 
 ## Quick Start
 
@@ -134,14 +134,14 @@ Once installed and configured, all components are auto-imported and ready to use
 ```vue
 <template>
   <div>
-    <LayoutHeader />
+    <UxLayoutHeader />
     <main>
-      <CommonContainer>
-        <CommonTxtTitle>Welcome</CommonTxtTitle>
-        <CommonBtnGradient>Get Started</CommonBtnGradient>
-      </CommonContainer>
+      <UxCommonContainer>
+        <UxCommonTxtTitle>Welcome</UxCommonTxtTitle>
+        <UxCommonBtnGradient>Get Started</UxCommonBtnGradient>
+      </UxCommonContainer>
     </main>
-    <LayoutFooter />
+    <UxLayoutFooter />
   </div>
 </template>
 ```
@@ -152,7 +152,7 @@ Once installed and configured, all components are auto-imported and ready to use
 
 ```ts
 export default defineNuxtConfig({
-  nuxtXui: {
+  nuxtUx: {
     // Version displayed in footer
     version: "1.0.0",
 
@@ -182,174 +182,174 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 | Component   | Description                                                                                     |
 | ----------- | ----------------------------------------------------------------------------------------------- |
-| `AuthLogin` | Full-featured animated login form with hover interactions, validation, and success/error states |
+| `UxAuthLogin` | Full-featured animated login form with hover interactions, validation, and success/error states |
 
 **Example:**
 
 ```vue
-<AuthLogin :on-login="handleLogin" />
+<UxAuthLogin :on-login="handleLogin" />
 ```
 
 ### 🎨 Layout Components (10)
 
 | Component             | Description                                                 |
 | --------------------- | ----------------------------------------------------------- |
-| `LayoutHeader`        | Fixed header with logo and menu                             |
-| `LayoutFooter`        | Fixed footer with copyright and theme controls              |
-| `LayoutLogo`          | Configurable logo component (supports slot for custom logo) |
-| `LayoutTheme`         | Theme control panel                                         |
-| `LayoutThemeBtnLight` | Light/Dark/System theme switcher                            |
-| `LayoutThemeBtnLang`  | Language selector dropdown                                  |
-| `LayoutThemeBtnColor` | Primary color picker                                        |
-| `LayoutThemeBtnAudio` | Audio volume controls                                       |
-| `LayoutThemeBtnVideo` | Video background controls                                   |
-| `LayoutThemeBtnAuth`  | Authentication status display                               |
+| `UxLayoutHeader`        | Fixed header with logo and menu                             |
+| `UxLayoutFooter`        | Fixed footer with copyright and theme controls              |
+| `UxLayoutLogo`          | Configurable logo component (supports slot for custom logo) |
+| `UxLayoutTheme`         | Theme control panel                                         |
+| `UxLayoutThemeBtnLight` | Light/Dark/System theme switcher                            |
+| `UxLayoutThemeBtnLang`  | Language selector dropdown                                  |
+| `UxLayoutThemeBtnColor` | Primary color picker                                        |
+| `UxLayoutThemeBtnAudio` | Audio volume controls                                       |
+| `UxLayoutThemeBtnVideo` | Video background controls                                   |
+| `UxLayoutThemeBtnAuth`  | Authentication status display                               |
 
 **Example:**
 
 ```vue
-<LayoutHeader />
+<UxLayoutHeader />
 <main>
   <!-- Your content -->
 </main>
-<LayoutFooter />
+<UxLayoutFooter />
 ```
 
 ### 🔘 Button Components (11)
 
 | Component            | Description                              |
 | -------------------- | ---------------------------------------- |
-| `CommonBtnGradient`  | Gradient styled button with icon support |
-| `CommonBtnIcon`      | Icon-only button                         |
-| `CommonBtnAccept`    | Pre-styled accept/confirm button         |
-| `CommonBtnCancel`    | Pre-styled cancel button                 |
-| `CommonBtnClose`     | Close button with icon                   |
-| `CommonBtnAdd`       | Add/create button with plus icon         |
-| `CommonBtnEdit`      | Edit button with pencil icon             |
-| `CommonBtnDelete`    | Delete button with trash icon            |
-| `CommonBtnUpload`    | Upload button with upload icon           |
-| `CommonBtnSubmit`    | Submit/send button                       |
-| `CommonBtnReload`    | Reload/refresh button                    |
-| `CommonBtnScrollTop` | Scroll to top floating button            |
+| `UxCommonBtnGradient`  | Gradient styled button with icon support |
+| `UxCommonBtnIcon`      | Icon-only button                         |
+| `UxCommonBtnAccept`    | Pre-styled accept/confirm button         |
+| `UxCommonBtnCancel`    | Pre-styled cancel button                 |
+| `UxCommonBtnClose`     | Close button with icon                   |
+| `UxCommonBtnAdd`       | Add/create button with plus icon         |
+| `UxCommonBtnEdit`      | Edit button with pencil icon             |
+| `UxCommonBtnDelete`    | Delete button with trash icon            |
+| `UxCommonBtnUpload`    | Upload button with upload icon           |
+| `UxCommonBtnSubmit`    | Submit/send button                       |
+| `UxCommonBtnReload`    | Reload/refresh button                    |
+| `UxCommonBtnScrollTop` | Scroll to top floating button            |
 
 **Example:**
 
 ```vue
-<CommonBtnGradient icon="i-heroicons-rocket-launch">
+<UxCommonBtnGradient icon="i-heroicons-rocket-launch">
   Get Started
-</CommonBtnGradient>
-<CommonBtnAccept @click="save" />
-<CommonBtnCancel @click="cancel" />
+</UxCommonBtnGradient>
+<UxCommonBtnAccept @click="save" />
+<UxCommonBtnCancel @click="cancel" />
 ```
 
 ### ⏳ Loader Components (8)
 
 | Component             | Description                         |
 | --------------------- | ----------------------------------- |
-| `CommonLoader`        | Standard rotating loader            |
-| `CommonLoaderSimple`  | Minimal loader animation            |
-| `CommonLoaderInfo`    | Loader with custom info slot        |
-| `CommonLoaderSlot`    | Fully customizable loader with slot |
-| `CommonLoadingDots`   | Animated bouncing dots              |
-| `CommonAiLoader`      | AI-themed loader (default)          |
-| `CommonAiLoaderBlack` | AI loader in black theme            |
-| `CommonAiLoaderWhite` | AI loader in white theme            |
-| `CommonAiLoaderSVG`   | AI loader as SVG                    |
-| `CommonImgLoader`     | Image loading skeleton              |
+| `UxCommonLoader`        | Standard rotating loader            |
+| `UxCommonLoaderSimple`  | Minimal loader animation            |
+| `UxCommonLoaderInfo`    | Loader with custom info slot        |
+| `UxCommonLoaderSlot`    | Fully customizable loader with slot |
+| `UxCommonLoadingDots`   | Animated bouncing dots              |
+| `UxCommonAiLoader`      | AI-themed loader (default)          |
+| `UxCommonAiLoaderBlack` | AI loader in black theme            |
+| `UxCommonAiLoaderWhite` | AI loader in white theme            |
+| `UxCommonAiLoaderSVG`   | AI loader as SVG                    |
+| `UxCommonImgLoader`     | Image loading skeleton              |
 
 **Example:**
 
 ```vue
-<CommonLoader v-if="isLoading" />
-<CommonLoadingDots />
-<CommonAiLoader />
+<UxCommonLoader v-if="isLoading" />
+<UxCommonLoadingDots />
+<UxCommonAiLoader />
 ```
 
 ### 📝 Text Components (5)
 
 | Component           | Description                       |
 | ------------------- | --------------------------------- |
-| `CommonTxtTitle`    | Large page title (h1)             |
-| `CommonTxtSubtitle` | Subtitle text (h2)                |
-| `CommonTxtText`     | Body text with consistent styling |
-| `CommonTxtGradient` | Text with gradient effect         |
-| `CommonTxtColor`    | Text with primary color           |
+| `UxCommonTxtTitle`    | Large page title (h1)             |
+| `UxCommonTxtSubtitle` | Subtitle text (h2)                |
+| `UxCommonTxtText`     | Body text with consistent styling |
+| `UxCommonTxtGradient` | Text with gradient effect         |
+| `UxCommonTxtColor`    | Text with primary color           |
 
 **Example:**
 
 ```vue
-<CommonTxtTitle>Welcome to Nuxt XUI</CommonTxtTitle>
-<CommonTxtSubtitle>Build faster with ready components</CommonTxtSubtitle>
-<CommonTxtGradient class="text-3xl">Amazing!</CommonTxtGradient>
+<UxCommonTxtTitle>Welcome to Nuxt UX</UxCommonTxtTitle>
+<UxCommonTxtSubtitle>Build faster with ready components</UxCommonTxtSubtitle>
+<UxCommonTxtGradient class="text-3xl">Amazing!</UxCommonTxtGradient>
 ```
 
 ### 🛠️ Utility Components (8)
 
 | Component           | Description                       |
 | ------------------- | --------------------------------- |
-| `CommonContainer`   | Responsive container with padding |
-| `CommonDividerX`    | Horizontal divider line           |
-| `CommonDividerY`    | Vertical divider line             |
-| `CommonProgressBar` | Progress indicator bar            |
-| `CommonSlider`      | Range slider input                |
-| `CommonClock`       | Current time display              |
-| `CommonKbd`         | Keyboard key display              |
-| `CommonKbdRed`      | Keyboard key in red theme         |
-| `CommonEmptyDB`     | Empty state component             |
+| `UxCommonContainer`   | Responsive container with padding |
+| `UxCommonDividerX`    | Horizontal divider line           |
+| `UxCommonDividerY`    | Vertical divider line             |
+| `UxCommonProgressBar` | Progress indicator bar            |
+| `UxCommonSlider`      | Range slider input                |
+| `UxCommonClock`       | Current time display              |
+| `UxCommonKbd`         | Keyboard key display              |
+| `UxCommonKbdRed`      | Keyboard key in red theme         |
+| `UxCommonEmptyDB`     | Empty state component             |
 
 **Example:**
 
 ```vue
-<CommonContainer>
-  <CommonProgressBar :value="75" />
-  <CommonDividerX />
+<UxCommonContainer>
+  <UxCommonProgressBar :value="75" />
+  <UxCommonDividerX />
   <div class="flex gap-2">
-    <CommonKbd>Ctrl</CommonKbd>
-    <CommonKbd>+</CommonKbd>
-    <CommonKbd>K</CommonKbd>
+    <UxCommonKbd>Ctrl</UxCommonKbd>
+    <UxCommonKbd>+</UxCommonKbd>
+    <UxCommonKbd>K</UxCommonKbd>
   </div>
-</CommonContainer>
+</UxCommonContainer>
 ```
 
 ### 🎬 Media Components (4)
 
 | Component              | Description              |
 | ---------------------- | ------------------------ |
-| `CommonBgVideo`        | Background video player  |
-| `CommonBgVideoYoutube` | YouTube background video |
-| `CommonImgViewer`      | Image viewer with zoom   |
-| `CommonImgSkeleton`    | Image loading skeleton   |
+| `UxCommonBgVideo`        | Background video player  |
+| `UxCommonBgVideoYoutube` | YouTube background video |
+| `UxCommonImgViewer`      | Image viewer with zoom   |
+| `UxCommonImgSkeleton`    | Image loading skeleton   |
 
 **Example:**
 
 ```vue
-<CommonBgVideo v-if="ui.showVideo && ui.videoURL" />
-<CommonImgViewer :src="imageUrl" />
+<UxCommonBgVideo v-if="ui.showVideo && ui.videoURL" />
+<UxCommonImgViewer :src="imageUrl" />
 ```
 
 ### 📊 Data Display Components (2)
 
 | Component                | Description                          |
 | ------------------------ | ------------------------------------ |
-| `CommonJsonViewer`       | JSON viewer with syntax highlighting |
-| `CommonJsonViewerColors` | Colored JSON viewer                  |
+| `UxCommonJsonViewer`       | JSON viewer with syntax highlighting |
+| `UxCommonJsonViewerColors` | Colored JSON viewer                  |
 
 **Example:**
 
 ```vue
-<CommonJsonViewer :data="myJsonData" />
+<UxCommonJsonViewer :data="myJsonData" />
 ```
 
 ### ✨ Effect Components (1)
 
 | Component           | Description              |
 | ------------------- | ------------------------ |
-| `CommonCursorLight` | Flashlight cursor effect |
+| `UxCommonCursorLight` | Flashlight cursor effect |
 
 **Example:**
 
 ```vue
-<CommonCursorLight v-if="ui.flashlight" />
+<UxCommonCursorLight v-if="ui.flashlight" />
 ```
 
 ## Composables
@@ -419,22 +419,22 @@ Manages application state:
 
 ### Custom Logo
 
-You can provide your own logo by using the slot in `LayoutLogo`:
+You can provide your own logo by using the slot in `UxLayoutLogo`:
 
 ```vue
-<LayoutLogo>
+<UxLayoutLogo>
   <img src="/your-logo.svg" alt="Logo" class="h-14" />
-</LayoutLogo>
+</UxLayoutLogo>
 ```
 
 Or configure the header directly:
 
 ```vue
-<LayoutHeader>
+<UxLayoutHeader>
   <template #logo>
     <YourCustomLogo />
   </template>
-</LayoutHeader>
+</UxLayoutHeader>
 ```
 
 ### Extending Stores
@@ -514,8 +514,8 @@ ui.addVideo("https://example.com/another-video.mp4");
 
 ```bash
 # Clone the repository
-git clone https://github.com/alexcolls/nuxt-xui.git
-cd nuxt-xui
+git clone https://github.com/alexcolls/nuxt-ux.git
+cd nuxt-ux
 
 # Install dependencies
 bun install   # or: deno install, npm install
@@ -646,8 +646,8 @@ If you find this project useful, please consider:
 
 ### Repository
 
-- [GitHub Repository](https://github.com/alexcolls/nuxt-xui)
-- [Issue Tracker](https://github.com/alexcolls/nuxt-xui/issues)
+- [GitHub Repository](https://github.com/alexcolls/nuxt-ux)
+- [Issue Tracker](https://github.com/alexcolls/nuxt-ux/issues)
 - [Changelog](./CHANGELOG.md)
 
 ### Documentation

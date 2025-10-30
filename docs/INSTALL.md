@@ -15,7 +15,7 @@ Then install:
 ```bash
 npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
-npm install @nuxt-xui
+npm install @nuxt-ux
 ```
 
 ## Option 2: Using --legacy-peer-deps Flag
@@ -23,7 +23,7 @@ npm install @nuxt-xui
 ```bash
 npm install --legacy-peer-deps @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 npm install --legacy-peer-deps @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
-npm install --legacy-peer-deps @nuxt-xui
+npm install --legacy-peer-deps @nuxt-ux
 ```
 
 ## Configure nuxt.config.ts
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
-    "@nuxt-xui", // MUST be last
+    "@nuxt-ux", // MUST be last
   ],
 
   i18n: {
@@ -47,7 +47,7 @@ export default defineNuxtConfig({
     defaultLocale: "en",
   },
 
-  nuxtXui: {
+  nuxtUx: {
     version: "1.0.0",
     logoURL: "https://your-site.com",
   },
@@ -61,14 +61,14 @@ All components are auto-imported:
 ```vue
 <template>
   <div>
-    <LayoutHeader />
+    <UxLayoutHeader />
     <main>
-      <CommonContainer>
-        <CommonTxtTitle>Hello World</CommonTxtTitle>
-        <CommonBtnGradient>Get Started</CommonBtnGradient>
-      </CommonContainer>
+      <UxCommonContainer>
+        <UxCommonTxtTitle>Hello World</UxCommonTxtTitle>
+        <UxCommonBtnGradient>Get Started</UxCommonBtnGradient>
+      </UxCommonContainer>
     </main>
-    <LayoutFooter />
+    <UxLayoutFooter />
   </div>
 </template>
 ```
@@ -81,7 +81,7 @@ All components are auto-imported:
 
 ### Components not auto-importing
 
-**Solution:** Ensure `@nuxt-xui` is the **last** module in your `modules` array.
+**Solution:** Ensure `@nuxt-ux` is the **last** module in your `modules` array.
 
 ### "Cannot find module" errors
 

@@ -38,6 +38,6 @@
 
 <script setup lang="ts">
 
-const { auth, app } = useNuxtXuiStore();
+const { auth, app } = useNuxtUxStore();
 
 </script>

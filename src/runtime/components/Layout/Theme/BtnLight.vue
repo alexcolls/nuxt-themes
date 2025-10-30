@@ -42,7 +42,7 @@ const iconSun = 'i-line-md-sun-rising-twotone-loop';
 const iconMoon = 'i-line-md-sunny-filled-loop-to-moon-filled-loop-transition';
 const iconSystem = 'i-line-md-computer-twotone';
 
-const { ui } = useNuxtXuiStore();
+const { ui } = useNuxtUxStore();
 const colorMode = useColorMode();
 const systemDarkMode = ref(
   window.matchMedia('(prefers-color-scheme: dark)').matches

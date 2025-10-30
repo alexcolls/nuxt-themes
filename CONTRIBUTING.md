@@ -1,8 +1,8 @@
-# Contributing to Nuxt XUI
+# Contributing to Nuxt UX
 
-First off, thank you for considering contributing to Nuxt XUI! 🎉
+First off, thank you for considering contributing to Nuxt UX! 🎉
 
-It's people like you that make Nuxt XUI such a great tool.
+It's people like you that make Nuxt UX such a great tool.
 
 ## Code of Conduct
 
@@ -42,8 +42,8 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/nuxt-xui.git
-cd nuxt-xui
+git clone https://github.com/YOUR_USERNAME/nuxt-ux.git
+cd nuxt-ux
 
 # Install dependencies
 npm install
@@ -117,7 +117,7 @@ npm run lint
 ## Project Structure
 
 ```
-nuxt-xui/
+nuxt-ux/
 ├── src/
 │   ├── module.ts           # Module entry point
 │   └── runtime/

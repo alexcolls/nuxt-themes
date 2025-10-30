@@ -59,7 +59,7 @@ const { changeVideoOnClick } = defineProps<{
 
 const NO_REPEAT = 40;
 
-const { ui } = useNuxtXuiStore();
+const { ui } = useNuxtUxStore();
 
 const key = ref(0);
 const video1 = ref(ui.videoURL);

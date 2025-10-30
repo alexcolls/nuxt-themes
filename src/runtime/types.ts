@@ -1,5 +1,5 @@
 /**
- * Type definitions for Nuxt XUI module
+ * Type definitions for Nuxt UX module
  */
 
 export type LightModes = 'light' | 'dark' | 'system';
@@ -10,7 +10,7 @@ export interface LangOption {
   icon: string;
 }
 
-export interface NuxtXuiUIState {
+export interface NuxtUxUIState {
   isDark: boolean;
   locale: string;
   iLocale: number;
@@ -24,7 +24,7 @@ export interface NuxtXuiUIState {
   videoPlaylist: string[];
 }
 
-export interface NuxtXuiAuthState {
+export interface NuxtUxAuthState {
   isAuth: boolean;
   user: {
     name?: string;
@@ -34,15 +34,15 @@ export interface NuxtXuiAuthState {
   logout: () => void;
 }
 
-export interface NuxtXuiAppState {
+export interface NuxtUxAppState {
   isMenuOpen: boolean;
   isModalOpen: boolean;
   selectedItems: any[];
   isProcessing: boolean;
 }
 
-export interface NuxtXuiStore {
-  ui: NuxtXuiUIState;
-  auth: NuxtXuiAuthState;
-  app: NuxtXuiAppState;
+export interface NuxtUxStore {
+  ui: NuxtUxUIState;
+  auth: NuxtUxAuthState;
+  app: NuxtUxAppState;
 }

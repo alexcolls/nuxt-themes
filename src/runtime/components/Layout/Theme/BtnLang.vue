@@ -26,8 +26,8 @@
 <script setup lang="ts">
 
 const { locale } = useI18n();
-const { ui } = useNuxtXuiStore();
-const langs = useNuxtXuiLangs();
+const { ui } = useNuxtUxStore();
+const langs = useNuxtUxLangs();
 
 const selectedLang = ref(langs[ui.iLocale]);
 

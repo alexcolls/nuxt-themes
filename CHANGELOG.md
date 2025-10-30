@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### 🔄 BREAKING CHANGES
 
-- **Package renamed**: `@nuxt-xui` → `@alexcolls/nuxt-xui` (properly scoped for NPM)
+- **Package renamed**: `@nuxt-ux` → `@alexcolls/nuxt-ux` (properly scoped for NPM)
 - **Removed Pinia dependency**: Now uses Nuxt's built-in `useState()` for state management
 - **Composable names changed**:
   - `useStore()` → `useNuxtXuiStore()`
@@ -45,7 +45,7 @@ All notable changes to this project will be documented in this file.
 
 ### 🔧 Configuration
 
-- Module name updated to `@alexcolls/nuxt-xui`
+- Module name updated to `@alexcolls/nuxt-ux`
 - Simplified peer dependencies (only @nuxt/ui and @nuxtjs/i18n)
 - Enhanced keywords for better NPM discoverability
 
@@ -55,8 +55,8 @@ All notable changes to this project will be documented in this file.
 
 1. Update package name:
    ```bash
-   npm uninstall @nuxt-xui
-   npm install @alexcolls/nuxt-xui
+   npm uninstall @nuxt-ux
+   npm install @alexcolls/nuxt-ux
    ```
 
 2. Remove Pinia dependencies:
@@ -69,7 +69,7 @@ All notable changes to this project will be documented in this file.
    modules: [
      '@nuxt/ui',
      '@nuxtjs/i18n',
-     '@alexcolls/nuxt-xui', // Updated name, no Pinia needed
+     '@alexcolls/nuxt-ux', // Updated name, no Pinia needed
    ]
    ```
 
@@ -145,7 +145,7 @@ All notable changes to this project will be documented in this file.
 
 ### ✨ Features
 
-- Added `AuthLogin` component with animated form interactions
+- Added `UxAuthLogin` component with animated form interactions
 - Progressive form reveal on hover
 - Username and password validation with visual feedback
 - Success/error state animations
@@ -175,21 +175,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🔄 Breaking Changes
 
-- Renamed module config key from `nuxtThemes` to `nuxtXui`
+- Renamed module config key from `nuxtThemes` to `nuxtUx`
 - Updated environment variables to `NUXT_PUBLIC_NUXT_XUI_*` format
-- Renamed Pinia store namespaces from `nuxt-themes.*` to `nuxt-xui.*`
+- Renamed Pinia store namespaces from `nuxt-themes.*` to `nuxt-ux.*`
 
 ### 🛠️ Infrastructure
 
 - Added `npm start` script for easier development
 - Updated playground with example pages
-- Repository renamed from `nuxt-themes` to `nuxt-xui`
+- Repository renamed from `nuxt-themes` to `nuxt-ux`
 
 ## v0.1.0 - 2025-10-20
 
 ### ✨ Features
 
-- Initial release of @nuxt-xui module
+- Initial release of @nuxt-ux module
 - 48+ reusable Layout and Common components
 - Full dark mode support with system preference detection
 - Multi-language support (English, Spanish, French)

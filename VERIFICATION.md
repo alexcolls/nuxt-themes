@@ -73,7 +73,7 @@ Last verified: 2025-10-27
 
 ## ✅ Package Configuration
 
-- [x] Package name: `@alexcolls/nuxt-xui`
+- [x] Package name: `@alexcolls/nuxt-ux`
 - [x] Version: 0.3.0 (ready for 0.4.0 release)
 - [x] License: MIT
 - [x] publishConfig: public access
@@ -103,18 +103,18 @@ Ready for integration testing:
 
 ```bash
 # In a fresh Nuxt project
-npm install @alexcolls/nuxt-xui @nuxt/ui @nuxtjs/i18n
+npm install @alexcolls/nuxt-ux @nuxt/ui @nuxtjs/i18n
 
 # Add to nuxt.config.ts
 modules: [
   '@nuxt/ui',
   '@nuxtjs/i18n',
-  '@alexcolls/nuxt-xui'
+  '@alexcolls/nuxt-ux'
 ]
 
 # Use components
-<LayoutHeader />
-<LayoutFooter />
+<UxLayoutHeader />
+<UxLayoutFooter />
 ```
 
 ## Summary

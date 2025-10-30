@@ -1,6 +1,6 @@
 # Dependency Isolation
 
-This document explains how `@nuxt-xui` manages dependencies to avoid conflicts with parent applications.
+This document explains how `@nuxt-ux` manages dependencies to avoid conflicts with parent applications.
 
 ## Architecture
 
@@ -48,7 +48,7 @@ npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-f
 ### Step 2: Install the Module
 
 ```bash
-npm install @nuxt-xui
+npm install @nuxt-ux
 ```
 
 ### Step 3: Configure `nuxt.config.ts`
@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n", // 2. Install i18n
     "@pinia/nuxt", // 3. Install Pinia
     "@pinia-plugin-persistedstate/nuxt", // 4. Install Pinia persistence
-    "@nuxt-xui", // 5. Install nuxt-xui LAST
+    "@nuxt-ux", // 5. Install nuxt-ux LAST
   ],
 
   // Configure i18n
@@ -73,8 +73,8 @@ export default defineNuxtConfig({
     defaultLocale: "en",
   },
 
-  // Configure nuxt-xui
-  nuxtXui: {
+  // Configure nuxt-ux
+  nuxtUx: {
     version: "1.0.0",
     logoURL: "https://your-site.com",
   },
@@ -119,7 +119,7 @@ npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
 
 **Cause:** Wrong module order in `nuxt.config.ts`.
 
-**Solution:** Ensure `@nuxt-xui` is the **last** module in the array.
+**Solution:** Ensure `@nuxt-ux` is the **last** module in the array.
 
 ### Components Not Auto-Importing
 
@@ -177,9 +177,9 @@ await addComponentsDir({
 
 This means:
 
-- `Auth/Login.vue` → `<AuthLogin />`
-- `Common/BtnGradient.vue` → `<CommonBtnGradient />`
-- `Layout/Header.vue` → `<LayoutHeader />`
+- `Auth/Login.vue` → `<UxAuthLogin />`
+- `Common/BtnGradient.vue` → `<UxCommonBtnGradient />`
+- `Layout/Header.vue` → `<UxLayoutHeader />`
 
 ## Related Files
 

@@ -253,7 +253,7 @@
 <script setup lang="ts">
 
 const theme = useAppConfig();
-const { ui } = useNuxtXuiStore();
+const { ui } = useNuxtUxStore();
 
 theme.ui.primary = ui.primary;
 watch(() => theme.ui.primary, () => {

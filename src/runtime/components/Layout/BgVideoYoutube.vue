@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 
-const { ui } = useNuxtXuiStore();
+const { ui } = useNuxtUxStore();
 
 const videoRef = ref<HTMLDivElement | HTMLVideoElement | null>(null);
 const isPlaying = ref(false);

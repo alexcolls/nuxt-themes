@@ -1,4 +1,4 @@
-# Getting Started with Nuxt XUI
+# Getting Started with Nuxt UX
 
 **Compatibility:** Nuxt 3 & Nuxt 4 ✅
 
@@ -119,7 +119,7 @@ No backend is required for testing!
 1. **Explore the playground**: Navigate between `/` and `/example` to see components in action
 2. **Customize**: Modify the playground pages to test your own implementations
 3. **Read the docs**: Check `README.md` for full API documentation
-4. **Create your app**: Install `@nuxt-xui` in your own Nuxt project
+4. **Create your app**: Install `@nuxt-ux` in your own Nuxt project
 
 ## Configuration
 
@@ -129,7 +129,7 @@ The playground is configured in `playground/nuxt.config.ts`:
 export default defineNuxtConfig({
   modules: ["../src/module"],
 
-  nuxtXui: {
+  nuxtUx: {
     version: "0.1.0",
     logoURL: "https://nuxt.com",
   },

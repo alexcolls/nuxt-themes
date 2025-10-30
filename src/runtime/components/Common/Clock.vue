@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 
-const { ui } = useNuxtXuiStore();
+const { ui } = useNuxtUxStore();
 
 const time = ref('00:00');
 const date = ref('');

@@ -1,109 +1,109 @@
 <template>
   <div class="min-h-screen">
-    <LayoutHeader />
+    <UxLayoutHeader />
     
     <main class="pt-20">
-      <CommonContainer>
+      <UxCommonContainer>
         <div class="py-12 space-y-8">
           <div class="text-center space-y-4">
-            <CommonTxtTitle>
+            <UxCommonTxtTitle>
               Welcome to Nuxt XUI
-            </CommonTxtTitle>
+            </UxCommonTxtTitle>
             
-            <CommonTxtSubtitle>
+            <UxCommonTxtSubtitle>
               A comprehensive Nuxt 3 module with 48+ reusable components
-            </CommonTxtSubtitle>
+            </UxCommonTxtSubtitle>
           </div>
           
-          <CommonDividerX />
+          <UxCommonDividerX />
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Feature Cards -->
             <div class="p-6 border border-primary-500/20 rounded-xl backdrop-blur-sm bg-white/5 dark:bg-black/5">
               <div class="flex items-center gap-3 mb-3">
                 <UIcon name="i-heroicons-paint-brush" class="w-8 h-8 text-primary-500" />
-                <CommonTxtColor class="text-xl font-bold">
+                <UxCommonTxtColor class="text-xl font-bold">
                   48+ Components
-                </CommonTxtColor>
+                </UxCommonTxtColor>
               </div>
-              <CommonTxtText>
+              <UxCommonTxtText>
                 Ready-to-use Layout and Common components built with Nuxt UI
-              </CommonTxtText>
+              </UxCommonTxtText>
             </div>
             
             <div class="p-6 border border-primary-500/20 rounded-xl backdrop-blur-sm bg-white/5 dark:bg-black/5">
               <div class="flex items-center gap-3 mb-3">
                 <UIcon name="i-heroicons-moon" class="w-8 h-8 text-primary-500" />
-                <CommonTxtColor class="text-xl font-bold">
+                <UxCommonTxtColor class="text-xl font-bold">
                   Dark Mode
-                </CommonTxtColor>
+                </UxCommonTxtColor>
               </div>
-              <CommonTxtText>
+              <UxCommonTxtText>
                 Fully integrated theme switching with system preference detection
-              </CommonTxtText>
+              </UxCommonTxtText>
             </div>
             
             <div class="p-6 border border-primary-500/20 rounded-xl backdrop-blur-sm bg-white/5 dark:bg-black/5">
               <div class="flex items-center gap-3 mb-3">
                 <UIcon name="i-heroicons-language" class="w-8 h-8 text-primary-500" />
-                <CommonTxtColor class="text-xl font-bold">
+                <UxCommonTxtColor class="text-xl font-bold">
                   i18n Ready
-                </CommonTxtColor>
+                </UxCommonTxtColor>
               </div>
-              <CommonTxtText>
+              <UxCommonTxtText>
                 Multi-language support with English, Spanish, and French included
-              </CommonTxtText>
+              </UxCommonTxtText>
             </div>
           </div>
           
-          <CommonDividerX />
+          <UxCommonDividerX />
           
           <div class="text-center space-y-6">
-            <CommonTxtGradient class="text-2xl font-bold">
+            <UxCommonTxtGradient class="text-2xl font-bold">
               Component Examples
-            </CommonTxtGradient>
+            </UxCommonTxtGradient>
             
             <div class="flex flex-wrap gap-4 justify-center">
-              <CommonBtnGradient icon="i-heroicons-rocket-launch-16-solid">
+              <UxCommonBtnGradient icon="i-heroicons-rocket-launch-16-solid">
                 Gradient Button
-              </CommonBtnGradient>
+              </UxCommonBtnGradient>
               
-              <CommonBtnAccept>Accept</CommonBtnAccept>
-              <CommonBtnCancel>Cancel</CommonBtnCancel>
-              <CommonBtnAdd />
-              <CommonBtnEdit />
-              <CommonBtnDelete />
+              <UxCommonBtnAccept>Accept</UxCommonBtnAccept>
+              <UxCommonBtnCancel>Cancel</UxCommonBtnCancel>
+              <UxCommonBtnAdd />
+              <UxCommonBtnEdit />
+              <UxCommonBtnDelete />
             </div>
             
             <div class="flex justify-center gap-4">
-              <CommonLoader />
-              <CommonLoadingDots />
+              <UxCommonLoader />
+              <UxCommonLoadingDots />
             </div>
             
             <div class="max-w-md mx-auto">
-              <CommonProgressBar :value="75" />
+              <UxCommonProgressBar :value="75" />
             </div>
             
             <div class="flex justify-center gap-3">
-              <CommonKbd>Ctrl</CommonKbd>
-              <CommonKbd>+</CommonKbd>
-              <CommonKbd>K</CommonKbd>
+              <UxCommonKbd>Ctrl</UxCommonKbd>
+              <UxCommonKbd>+</UxCommonKbd>
+              <UxCommonKbd>K</UxCommonKbd>
             </div>
             
             <div class="flex justify-center">
               <NuxtLink to="/example">
-                <CommonBtnGradient icon="i-heroicons-arrow-right-circle">
+                <UxCommonBtnGradient icon="i-heroicons-arrow-right-circle">
                   View Login Example
-                </CommonBtnGradient>
+                </UxCommonBtnGradient>
               </NuxtLink>
             </div>
           </div>
         </div>
-      </CommonContainer>
+      </UxCommonContainer>
     </main>
     
-    <LayoutFooter />
-    <CommonBtnScrollTop />
+    <UxLayoutFooter />
+    <UxCommonBtnScrollTop />
   </div>
 </template>
 

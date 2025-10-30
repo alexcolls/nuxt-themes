@@ -1,14 +1,14 @@
-import type { NuxtXuiStore, NuxtXuiUIState, NuxtXuiAuthState, NuxtXuiAppState } from '../types';
+import type { NuxtUxStore, NuxtUxUIState, NuxtUxAuthState, NuxtUxAppState } from '../types';
 
 /**
- * Nuxt XUI Store using built-in useState() composable
+ * Nuxt UX Store using built-in useState() composable
  * Provides SSR-safe state management without Pinia dependency
  * 
  * @returns Object containing ui, auth, and app state objects
  */
-export function useNuxtXuiStore(): NuxtXuiStore {
+export function useNuxtUxStore(): NuxtUxStore {
   // UI State - Theme, language, colors, media settings
-  const ui = useState<NuxtXuiUIState>('nuxt-xui-ui', () => ({
+  const ui = useState<NuxtUxUIState>('nuxt-ux-ui', () => ({
     isDark: false,
     locale: 'en',
     iLocale: 0,
@@ -23,7 +23,7 @@ export function useNuxtXuiStore(): NuxtXuiStore {
   }));
 
   // Auth State - Authentication and user management
-  const auth = useState<Omit<NuxtXuiAuthState, 'logout'>>('nuxt-xui-auth', () => ({
+  const auth = useState<Omit<NuxtUxAuthState, 'logout'>>('nuxt-ux-auth', () => ({
     isAuth: false,
     user: null,
   }));
@@ -35,7 +35,7 @@ export function useNuxtXuiStore(): NuxtXuiStore {
   };
 
   // App State - Application-level state (menus, modals, etc.)
-  const app = useState<NuxtXuiAppState>('nuxt-xui-app', () => ({
+  const app = useState<NuxtUxAppState>('nuxt-ux-app', () => ({
     isMenuOpen: false,
     isModalOpen: false,
     selectedItems: [],
@@ -64,7 +64,7 @@ export function useNuxtXuiStore(): NuxtXuiStore {
   };
 
   return {
-    ui: uiWithHelpers as NuxtXuiUIState,
+    ui: uiWithHelpers as NuxtUxUIState,
     auth: { ...auth.value, logout },
     app: app.value,
   };

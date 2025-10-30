@@ -22,8 +22,8 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@alexcolls/nuxt-xui',
-    configKey: 'nuxtXui',
+    name: '@alexcolls/nuxt-ux',
+    configKey: 'nuxtUx',
     compatibility: {
       nuxt: '^3.0.0 || ^4.0.0'
     }
@@ -41,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url);
 
     // Add runtime config
-    nuxt.options.runtimeConfig.public.nuxtXui = {
+    nuxt.options.runtimeConfig.public.nuxtUx = {
       version: options.version,
       logoURL: options.logoURL
     };
@@ -49,8 +49,8 @@ export default defineNuxtModule<ModuleOptions>({
     // Register components
     await addComponentsDir({
       path: resolver.resolve('./runtime/components'),
-      pathPrefix: true,
-      prefix: '',
+      pathPrefix: false,
+      prefix: 'Ux',
       global: true
     });
 
@@ -70,8 +70,11 @@ export default defineNuxtModule<ModuleOptions>({
     });
 
     // Configure @nuxt/ui icons (if Nuxt UI is installed by parent)
-    if (nuxt.options.ui) {
-      const existingIcons = nuxt.options.ui.icons || [];
+    if (nuxt.options.ui && typeof nuxt.options.ui === 'object') {
+      if (!nuxt.options.ui.icons) {
+        nuxt.options.ui.icons = [];
+      }
+      const existingIcons = Array.isArray(nuxt.options.ui.icons) ? nuxt.options.ui.icons : [];
       nuxt.options.ui.icons = [
         'heroicons',
         'svg-spinners',

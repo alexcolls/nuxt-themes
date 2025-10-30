@@ -4,7 +4,7 @@ import type { LangOption } from '../types';
  * Provides available language options for the module
  * Returns an array of supported languages with their icons
  */
-export function useNuxtXuiLangs(): LangOption[] {
+export function useNuxtUxLangs(): LangOption[] {
   return [
     {
       value: 'en',
