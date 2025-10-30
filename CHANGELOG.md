@@ -75,6 +75,22 @@ All notable changes to this project will be documented in this file.
    const langs = useNuxtUxLangs();
    ```
 
+### ✨ New Components (+26)
+
+Added 26 new Common components from quami project:
+- **UI Elements**: Accordion, GlobalSearch, Selector
+- **Buttons**: Btn, BtnXs, BtnGrid, BtnModal, BtnRandom
+- **Headings**: H1, H2, H3, H4
+- **Text**: Text, TextGradient
+- **Magic Components**: MagicBtn, MagicTab, MagicWindow
+- **Media**: VideoCard, PdfViewer, RecordAudio
+- **Backgrounds**: BackgroundVideos, BgSkeletonGrid, BgVideoGlobe, BgVideoGrid
+- **Inputs**: Range
+- **Other**: ScreenBtn
+
+**Total components**: 54 → 80 components (+48% growth)
+**Module size**: 119 kB → 173 kB
+
 ### 🛠️ Infrastructure
 
 - Added `build.config.ts` for unbuild configuration
