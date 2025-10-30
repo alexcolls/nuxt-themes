@@ -62,9 +62,9 @@ export default defineNuxtModule<ModuleOptions>({
       register({
         langDir: resolver.resolve('./runtime/locales'),
         locales: [
-          { code: 'en', file: 'en.ts' },
-          { code: 'es', file: 'es.ts' },
-          { code: 'fr', file: 'fr.ts' }
+          { code: 'en', file: 'en.js' },
+          { code: 'es', file: 'es.js' },
+          { code: 'fr', file: 'fr.js' }
         ]
       });
     });
