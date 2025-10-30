@@ -1,6 +1,6 @@
 {
   "name": "@alexcolls/nuxt-ux",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "Production-ready Nuxt 3/4 module with 50+ reusable UI components, built-in state management, dark mode, and i18n support",
   "author": {
     "name": "Alex Colls",

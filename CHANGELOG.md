@@ -2,6 +2,94 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.5.0 - 2025-10-30
+
+### 🔄 BREAKING CHANGES - Complete Rebrand
+
+- **Project renamed**: `nuxt-xui` → `nuxt-ux`
+- **Package renamed**: `@alexcolls/nuxt-xui` → `@alexcolls/nuxt-ux`
+- **GitHub repository**: `alexcolls/nuxt-xui` → `alexcolls/nuxt-ux`
+- **Module configKey**: `nuxtXui` → `nuxtUx`
+- **Component prefix**: All components now use `Ux` prefix instead of `Layout`/`Common`/`Auth`
+  - `<LayoutHeader>` → `<UxLayoutHeader>`
+  - `<CommonButton>` → `<UxCommonButton>`
+  - `<AuthLogin>` → `<UxAuthLogin>`
+- **Composables renamed**:
+  - `useNuxtXuiStore()` → `useNuxtUxStore()`
+  - `useNuxtXuiLangs()` → `useNuxtUxLangs()`
+- **State keys**: All state keys changed from `nuxt-xui-*` to `nuxt-ux-*`
+- **TypeScript types**: All interfaces renamed from `NuxtXui*` to `NuxtUx*`
+
+### 📦 Migration Guide
+
+**From v0.4.0 to v0.5.0:**
+
+1. Update package name:
+   ```bash
+   npm uninstall @alexcolls/nuxt-xui
+   npm install @alexcolls/nuxt-ux
+   ```
+
+2. Update `nuxt.config.ts`:
+   ```ts
+   // Before
+   export default defineNuxtConfig({
+     modules: ['@alexcolls/nuxt-xui'],
+     nuxtXui: { version: '1.0.0' }
+   });
+   
+   // After
+   export default defineNuxtConfig({
+     modules: ['@alexcolls/nuxt-ux'],
+     nuxtUx: { version: '1.0.0' }
+   });
+   ```
+
+3. Update all component usage in your templates:
+   ```vue
+   <!-- Before -->
+   <LayoutHeader />
+   <CommonContainer>
+     <CommonTxtTitle>Title</CommonTxtTitle>
+     <CommonBtnGradient>Click</CommonBtnGradient>
+   </CommonContainer>
+   <LayoutFooter />
+   
+   <!-- After -->
+   <UxLayoutHeader />
+   <UxCommonContainer>
+     <UxCommonTxtTitle>Title</UxCommonTxtTitle>
+     <UxCommonBtnGradient>Click</UxCommonBtnGradient>
+   </UxCommonContainer>
+   <UxLayoutFooter />
+   ```
+
+4. Update composable imports:
+   ```ts
+   // Before
+   const { ui, auth, app } = useNuxtXuiStore();
+   const langs = useNuxtXuiLangs();
+   
+   // After
+   const { ui, auth, app } = useNuxtUxStore();
+   const langs = useNuxtUxLangs();
+   ```
+
+### 🛠️ Infrastructure
+
+- Added `build.config.ts` for unbuild configuration
+- Updated all GitHub workflows with new repository name
+- Updated all documentation with new naming convention
+- Regenerated package-lock.json with new package name
+
+### 📚 Documentation
+
+- Complete rewrite of README with new component names
+- Updated CHANGELOG with migration guides
+- Updated CONTRIBUTING.md, INSTALL.md, GETTING_STARTED.md
+- Updated DEPENDENCY_ISOLATION.md and VERIFICATION.md
+- All examples updated to use `Ux*` component prefix
+
 ## v0.4.0 - 2025-10-27
 
 ### 🔄 BREAKING CHANGES
