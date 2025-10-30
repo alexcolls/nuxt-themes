@@ -1,4 +1,4 @@
-# Nuxt UX 
+# Nuxt UX
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -13,7 +13,7 @@ An **independent, production-ready** Nuxt 3/4 module providing 80+ polished UI c
 ## ✨ Features
 
 - 🎨 **80+ Ready-to-Use Components** - Auth, Layout, and Common UI components with consistent design
-- 🌙 **Dark Mode Support** - Seamless light/dark/system theme switching with state persistence  
+- 🌙 **Dark Mode Support** - Seamless light/dark/system theme switching with state persistence
 - 🌍 **i18n Ready** - Built-in multi-language support (English, Spanish, French)
 - 💾 **State Management** - Pinia stores with automatic persistence and reactive updates
 - 🎯 **TypeScript First** - Full TypeScript support with comprehensive type definitions
@@ -143,17 +143,19 @@ Once installed and configured, all components are auto-imported and ready to use
 <template>
   <div class="min-h-screen">
     <UxLayoutHeader />
-    
+
     <main class="pt-20">
       <UxCommonContainer>
         <div class="py-12 space-y-8">
           <div class="text-center space-y-4">
             <UxCommonTxtTitle>Welcome to Your App</UxCommonTxtTitle>
-            <UxCommonTxtSubtitle>Built with Nuxt UX components</UxCommonTxtSubtitle>
+            <UxCommonTxtSubtitle
+              >Built with Nuxt UX components</UxCommonTxtSubtitle
+            >
           </div>
-          
+
           <UxCommonDividerX />
-          
+
           <div class="flex flex-wrap gap-4 justify-center">
             <UxCommonBtnGradient icon="i-heroicons-rocket-launch">
               Get Started
@@ -164,7 +166,7 @@ Once installed and configured, all components are auto-imported and ready to use
         </div>
       </UxCommonContainer>
     </main>
-    
+
     <UxLayoutFooter />
     <UxCommonBtnScrollTop />
   </div>
@@ -175,18 +177,22 @@ Once installed and configured, all components are auto-imported and ready to use
 
 ```vue
 <template>
-  <div class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <div
+    class="min-h-screen flex items-center justify-center relative overflow-hidden"
+  >
     <!-- Optional background video -->
     <UxLayoutBgVideo v-if="ui.showVideo && ui.videoURL" />
-    
+
     <!-- Animated background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-gray-900/50 to-primary-900/20" />
-    
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-gray-900/50 to-primary-900/20"
+    />
+
     <!-- Login form -->
     <div class="relative z-10">
       <UxAuthLogin :on-login="handleLogin" />
     </div>
-    
+
     <!-- Optional cursor effect -->
     <UxCommonCursorLight v-if="ui.flashlight" />
   </div>
@@ -200,7 +206,7 @@ const handleLogin = async (user: string, pass: string): Promise<boolean> => {
   if (user.length > 3 && pass.length > 8) {
     auth.isAuth = true;
     auth.user = { name: user };
-    await navigateTo('/dashboard');
+    await navigateTo("/dashboard");
     return true;
   }
   return false;
@@ -242,11 +248,12 @@ All components are **auto-imported** and ready to use without any imports. Total
 
 ### 🔐 Authentication Components (1)
 
-| Component | Description | Props |
-|-----------|-------------|-------|
+| Component     | Description                                                                            | Props                                       |
+| ------------- | -------------------------------------------------------------------------------------- | ------------------------------------------- |
 | `UxAuthLogin` | Animated login form with hover reveal, validation states, and success/error animations | `onLogin: (user, pass) => Promise<boolean>` |
 
 **Example:**
+
 ```vue
 <template>
   <UxAuthLogin :on-login="handleLogin" />
@@ -262,27 +269,28 @@ const handleLogin = async (user, pass) => {
 
 ### 🏗️ Layout Components (8)
 
-| Component | Description | Key Features |
-|-----------|-------------|--------------|
-| `UxLayoutHeader` | Fixed header with logo and navigation | Auto-responsive, theme integration |
-| `UxLayoutFooter` | Footer with copyright and theme controls | Auto-year update, theme buttons |
-| `UxLayoutLogo` | Configurable logo with click action | Custom slot support |
-| `UxLayoutBgVideo` | Background video player | Volume control, opacity settings |
-| `UxLayoutBgVideoYoutube` | YouTube background video player | Embedded player support |
+| Component                | Description                              | Key Features                       |
+| ------------------------ | ---------------------------------------- | ---------------------------------- |
+| `UxLayoutHeader`         | Fixed header with logo and navigation    | Auto-responsive, theme integration |
+| `UxLayoutFooter`         | Footer with copyright and theme controls | Auto-year update, theme buttons    |
+| `UxLayoutLogo`           | Configurable logo with click action      | Custom slot support                |
+| `UxLayoutBgVideo`        | Background video player                  | Volume control, opacity settings   |
+| `UxLayoutBgVideoYoutube` | YouTube background video player          | Embedded player support            |
 
 #### Theme Control Components (5)
 
-| Component | Description | Features |
-|-----------|-------------|----------|
-| `UxLayoutTheme` | Complete theme control panel | All theme controls in one |
+| Component               | Description                      | Features                    |
+| ----------------------- | -------------------------------- | --------------------------- |
+| `UxLayoutTheme`         | Complete theme control panel     | All theme controls in one   |
 | `UxLayoutThemeBtnLight` | Light/Dark/System theme switcher | System preference detection |
-| `UxLayoutThemeBtnLang` | Language selector dropdown | Flag icons, persistence |
-| `UxLayoutThemeBtnColor` | Primary color picker | 10+ color options |
-| `UxLayoutThemeBtnAudio` | Audio volume controls | FX and video volume |
-| `UxLayoutThemeBtnVideo` | Video background controls | Play/pause, opacity |
-| `UxLayoutThemeBtnAuth` | Authentication status button | Login/logout actions |
+| `UxLayoutThemeBtnLang`  | Language selector dropdown       | Flag icons, persistence     |
+| `UxLayoutThemeBtnColor` | Primary color picker             | 10+ color options           |
+| `UxLayoutThemeBtnAudio` | Audio volume controls            | FX and video volume         |
+| `UxLayoutThemeBtnVideo` | Video background controls        | Play/pause, opacity         |
+| `UxLayoutThemeBtnAuth`  | Authentication status button     | Login/logout actions        |
 
 **Layout Example:**
+
 ```vue
 <template>
   <div class="min-h-screen">
@@ -291,180 +299,298 @@ const handleLogin = async (user, pass) => {
       <!-- Your content -->
     </main>
     <UxLayoutFooter />
-    
+
     <!-- Optional background video -->
     <UxLayoutBgVideo v-if="showVideo" />
   </div>
 </template>
 ```
 
-### 🔘 Button Components (11)
+### 🎨 Common Components (71)
 
-| Component            | Description                              |
-| -------------------- | ---------------------------------------- |
-| `UxCommonBtnGradient`  | Gradient styled button with icon support |
-| `UxCommonBtnIcon`      | Icon-only button                         |
-| `UxCommonBtnAccept`    | Pre-styled accept/confirm button         |
-| `UxCommonBtnCancel`    | Pre-styled cancel button                 |
-| `UxCommonBtnClose`     | Close button with icon                   |
-| `UxCommonBtnAdd`       | Add/create button with plus icon         |
-| `UxCommonBtnEdit`      | Edit button with pencil icon             |
-| `UxCommonBtnDelete`    | Delete button with trash icon            |
-| `UxCommonBtnUpload`    | Upload button with upload icon           |
-| `UxCommonBtnSubmit`    | Submit/send button                       |
-| `UxCommonBtnReload`    | Reload/refresh button                    |
-| `UxCommonBtnScrollTop` | Scroll to top floating button            |
+The largest category with components for every use case, organized by type:
 
-**Example:**
+#### Button Components (15)
 
-```vue
-<UxCommonBtnGradient icon="i-heroicons-rocket-launch">
-  Get Started
-</UxCommonBtnGradient>
-<UxCommonBtnAccept @click="save" />
-<UxCommonBtnCancel @click="cancel" />
-```
+| Component              | Description                              | Use Case              |
+| ---------------------- | ---------------------------------------- | --------------------- |
+| `UxCommonBtn`          | Base button component                    | General purpose       |
+| `UxCommonBtnGradient`  | Gradient styled button with icon support | Primary actions, CTAs |
+| `UxCommonBtnIcon`      | Icon-only button                         | Tool bars, compact UI |
+| `UxCommonBtnAccept`    | Pre-styled accept/confirm button         | Form submissions      |
+| `UxCommonBtnCancel`    | Pre-styled cancel button                 | Form cancellation     |
+| `UxCommonBtnClose`     | Close button with X icon                 | Modals, dialogs       |
+| `UxCommonBtnAdd`       | Add/create button with plus icon         | Adding items          |
+| `UxCommonBtnEdit`      | Edit button with pencil icon             | Edit actions          |
+| `UxCommonBtnDelete`    | Delete button with trash icon            | Destructive actions   |
+| `UxCommonBtnUpload`    | Upload button with upload icon           | File uploads          |
+| `UxCommonBtnSubmit`    | Submit/send button                       | Form submissions      |
+| `UxCommonBtnReload`    | Reload/refresh button                    | Refresh data          |
+| `UxCommonBtnScrollTop` | Scroll to top floating button            | Long pages            |
+| `UxCommonBtnXs`        | Extra small button                       | Compact interfaces    |
+| `UxCommonMagicBtn`     | Animated magic button                    | Special actions       |
 
-### ⏳ Loader Components (8)
-
-| Component             | Description                         |
-| --------------------- | ----------------------------------- |
-| `UxCommonLoader`        | Standard rotating loader            |
-| `UxCommonLoaderSimple`  | Minimal loader animation            |
-| `UxCommonLoaderInfo`    | Loader with custom info slot        |
-| `UxCommonLoaderSlot`    | Fully customizable loader with slot |
-| `UxCommonLoadingDots`   | Animated bouncing dots              |
-| `UxCommonAiLoader`      | AI-themed loader (default)          |
-| `UxCommonAiLoaderBlack` | AI loader in black theme            |
-| `UxCommonAiLoaderWhite` | AI loader in white theme            |
-| `UxCommonAiLoaderSVG`   | AI loader as SVG                    |
-| `UxCommonImgLoader`     | Image loading skeleton              |
-
-**Example:**
+**Button Examples:**
 
 ```vue
-<UxCommonLoader v-if="isLoading" />
-<UxCommonLoadingDots />
-<UxCommonAiLoader />
-```
+<template>
+  <div class="space-x-4">
+    <!-- Primary actions -->
+    <UxCommonBtnGradient icon="i-heroicons-rocket-launch">
+      Get Started
+    </UxCommonBtnGradient>
 
-### 📝 Text Components (5)
+    <!-- Form actions -->
+    <UxCommonBtnAccept @click="save">Save</UxCommonBtnAccept>
+    <UxCommonBtnCancel @click="cancel">Cancel</UxCommonBtnCancel>
 
-| Component           | Description                       |
-| ------------------- | --------------------------------- |
-| `UxCommonTxtTitle`    | Large page title (h1)             |
-| `UxCommonTxtSubtitle` | Subtitle text (h2)                |
-| `UxCommonTxtText`     | Body text with consistent styling |
-| `UxCommonTxtGradient` | Text with gradient effect         |
-| `UxCommonTxtColor`    | Text with primary color           |
+    <!-- Icon actions -->
+    <UxCommonBtnAdd @click="addItem" />
+    <UxCommonBtnEdit @click="editItem" />
+    <UxCommonBtnDelete @click="deleteItem" />
 
-**Example:**
-
-```vue
-<UxCommonTxtTitle>Welcome to Nuxt UX</UxCommonTxtTitle>
-<UxCommonTxtSubtitle>Build faster with ready components</UxCommonTxtSubtitle>
-<UxCommonTxtGradient class="text-3xl">Amazing!</UxCommonTxtGradient>
-```
-
-### 🛠️ Utility Components (8)
-
-| Component           | Description                       |
-| ------------------- | --------------------------------- |
-| `UxCommonContainer`   | Responsive container with padding |
-| `UxCommonDividerX`    | Horizontal divider line           |
-| `UxCommonDividerY`    | Vertical divider line             |
-| `UxCommonProgressBar` | Progress indicator bar            |
-| `UxCommonSlider`      | Range slider input                |
-| `UxCommonClock`       | Current time display              |
-| `UxCommonKbd`         | Keyboard key display              |
-| `UxCommonKbdRed`      | Keyboard key in red theme         |
-| `UxCommonEmptyDB`     | Empty state component             |
-
-**Example:**
-
-```vue
-<UxCommonContainer>
-  <UxCommonProgressBar :value="75" />
-  <UxCommonDividerX />
-  <div class="flex gap-2">
-    <UxCommonKbd>Ctrl</UxCommonKbd>
-    <UxCommonKbd>+</UxCommonKbd>
-    <UxCommonKbd>K</UxCommonKbd>
+    <!-- Utility -->
+    <UxCommonBtnScrollTop />
   </div>
-</UxCommonContainer>
+</template>
 ```
 
-### 🎬 Media Components (4)
+#### Loading Components (9)
 
-| Component              | Description              |
-| ---------------------- | ------------------------ |
-| `UxCommonBgVideo`        | Background video player  |
-| `UxCommonBgVideoYoutube` | YouTube background video |
-| `UxCommonImgViewer`      | Image viewer with zoom   |
-| `UxCommonImgSkeleton`    | Image loading skeleton   |
+| Component               | Description                         | Best For                 |
+| ----------------------- | ----------------------------------- | ------------------------ |
+| `UxCommonLoader`        | Standard rotating loader            | General loading states   |
+| `UxCommonLoaderSimple`  | Minimal loader animation            | Subtle loading           |
+| `UxCommonLoaderInfo`    | Loader with custom info slot        | Descriptive loading      |
+| `UxCommonLoaderSlot`    | Fully customizable loader with slot | Custom loading UI        |
+| `UxCommonLoadingDots`   | Animated bouncing dots              | Modern loading animation |
+| `UxCommonAiLoader`      | AI-themed loader (default)          | AI/ML applications       |
+| `UxCommonAiLoaderBlack` | AI loader in black theme            | Dark themes              |
+| `UxCommonAiLoaderWhite` | AI loader in white theme            | Light themes             |
+| `UxCommonAiLoaderSVG`   | AI loader as SVG                    | Scalable applications    |
 
-**Example:**
+**Loading Examples:**
 
 ```vue
-<UxCommonBgVideo v-if="ui.showVideo && ui.videoURL" />
-<UxCommonImgViewer :src="imageUrl" />
+<template>
+  <div>
+    <!-- Basic loading -->
+    <UxCommonLoader v-if="isLoading" />
+
+    <!-- Animated dots -->
+    <UxCommonLoadingDots v-if="isProcessing" />
+
+    <!-- AI themed -->
+    <UxCommonAiLoader v-if="isThinking" />
+
+    <!-- Custom loader with info -->
+    <UxCommonLoaderInfo v-if="isUploading">
+      <template #info>Uploading {{ filename }}...</template>
+    </UxCommonLoaderInfo>
+  </div>
+</template>
 ```
 
-### 📊 Data Display Components (2)
+#### Text & Typography Components (10)
 
-| Component                | Description                          |
-| ------------------------ | ------------------------------------ |
-| `UxCommonJsonViewer`       | JSON viewer with syntax highlighting |
-| `UxCommonJsonViewerColors` | Colored JSON viewer                  |
+| Component              | Description                       | HTML Tag |
+| ---------------------- | --------------------------------- | -------- |
+| `UxCommonTxtTitle`     | Large page title                  | h1       |
+| `UxCommonTxtSubtitle`  | Subtitle text                     | h2       |
+| `UxCommonTxtText`      | Body text with consistent styling | p        |
+| `UxCommonTxtGradient`  | Text with gradient effect         | span     |
+| `UxCommonTxtColor`     | Text with primary color           | span     |
+| `UxCommonText`         | Base text component               | span     |
+| `UxCommonTextGradient` | Alternative gradient text         | span     |
+| `UxCommonH1`           | Heading 1                         | h1       |
+| `UxCommonH2`           | Heading 2                         | h2       |
+| `UxCommonH3`           | Heading 3                         | h3       |
+| `UxCommonH4`           | Heading 4                         | h4       |
 
-**Example:**
+**Typography Examples:**
 
 ```vue
-<UxCommonJsonViewer :data="myJsonData" />
+<template>
+  <div class="space-y-4">
+    <!-- Headlines -->
+    <UxCommonTxtTitle>Welcome to Nuxt UX</UxCommonTxtTitle>
+    <UxCommonTxtSubtitle
+      >Build faster with ready components</UxCommonTxtSubtitle
+    >
+
+    <!-- Styled text -->
+    <UxCommonTxtGradient class="text-3xl font-bold">
+      Amazing Gradient Text!
+    </UxCommonTxtGradient>
+
+    <UxCommonTxtColor>Text in primary color</UxCommonTxtColor>
+
+    <!-- Regular content -->
+    <UxCommonTxtText>
+      This is body text with consistent styling across your application.
+    </UxCommonTxtText>
+  </div>
+</template>
 ```
 
-### ✨ Effect Components (1)
+#### UI & Layout Utilities (12)
 
-| Component           | Description              |
-| ------------------- | ------------------------ |
-| `UxCommonCursorLight` | Flashlight cursor effect |
+| Component             | Description                       | Use Case                |
+| --------------------- | --------------------------------- | ----------------------- |
+| `UxCommonContainer`   | Responsive container with padding | Page layouts            |
+| `UxCommonDividerX`    | Horizontal divider line           | Section separation      |
+| `UxCommonDividerY`    | Vertical divider line             | Inline separation       |
+| `UxCommonProgressBar` | Progress indicator bar            | Upload/loading progress |
+| `UxCommonSlider`      | Range slider input                | Settings, filters       |
+| `UxCommonRange`       | Alternative range component       | Value selection         |
+| `UxCommonClock`       | Current time display              | Headers, dashboards     |
+| `UxCommonKbd`         | Keyboard key display              | Shortcuts, docs         |
+| `UxCommonKbdRed`      | Red keyboard key                  | Important shortcuts     |
+| `UxCommonEmptyDB`     | Empty state component             | No data states          |
+| `UxCommonAccordion`   | Collapsible content sections      | FAQs, nested content    |
+| `UxCommonSelector`    | Custom select dropdown            | Form selections         |
 
-**Example:**
+#### Media & Content (8)
+
+| Component                  | Description               | Features             |
+| -------------------------- | ------------------------- | -------------------- |
+| `UxCommonImgViewer`        | Image viewer with zoom    | Zoom, pan controls   |
+| `UxCommonImgSkeleton`      | Image loading skeleton    | Loading placeholders |
+| `UxCommonImgLoader`        | Image loading component   | Error handling       |
+| `UxCommonVideoCard`        | Video preview card        | Thumbnails, controls |
+| `UxCommonJsonViewer`       | JSON data viewer          | Syntax highlighting  |
+| `UxCommonJsonViewerColors` | Colored JSON viewer       | Enhanced readability |
+| `UxCommonPdfViewer`        | PDF document viewer       | Document display     |
+| `UxCommonGlobalSearch`     | Advanced search component | Search functionality |
+
+#### Interactive & Advanced (17)
+
+| Component                  | Description                | Special Features     |
+| -------------------------- | -------------------------- | -------------------- |
+| `UxCommonCursorLight`      | Flashlight cursor effect   | Interactive lighting |
+| `UxCommonMagicWindow`      | Animated window component  | Magic animations     |
+| `UxCommonMagicTab`         | Animated tab component     | Smooth transitions   |
+| `UxCommonBtnModal`         | Modal trigger button       | Modal integration    |
+| `UxCommonBtnGrid`          | Grid layout button         | Grid controls        |
+| `UxCommonBtnRandom`        | Random action button       | Randomization        |
+| `UxCommonScreenBtn`        | Screen control button      | Fullscreen toggle    |
+| `UxCommonRecordAudio`      | Audio recording component  | Voice recording      |
+| `UxCommonBackgroundVideos` | Multiple background videos | Video playlists      |
+| `UxCommonBgVideoGlobe`     | 3D globe video background  | Interactive globe    |
+| `UxCommonBgVideoGrid`      | Grid video background      | Video grid layouts   |
+| `UxCommonBgSkeletonGrid`   | Skeleton grid loader       | Grid loading states  |
+
+**Utility Examples:**
 
 ```vue
-<UxCommonCursorLight v-if="ui.flashlight" />
+<template>
+  <UxCommonContainer>
+    <!-- Progress tracking -->
+    <UxCommonProgressBar :value="uploadProgress" class="mb-4" />
+
+    <!-- Section divider -->
+    <UxCommonDividerX />
+
+    <!-- Keyboard shortcuts -->
+    <div class="flex gap-2 items-center">
+      <span>Press</span>
+      <UxCommonKbd>Ctrl</UxCommonKbd>
+      <UxCommonKbd>+</UxCommonKbd>
+      <UxCommonKbd>K</UxCommonKbd>
+      <span>to search</span>
+    </div>
+
+    <!-- Range slider -->
+    <UxCommonSlider v-model="volume" :min="0" :max="100" />
+
+    <!-- Empty state -->
+    <UxCommonEmptyDB v-if="!hasData">No data available</UxCommonEmptyDB>
+
+    <!-- JSON viewer -->
+    <UxCommonJsonViewer :data="apiResponse" />
+
+    <!-- Special effects -->
+    <UxCommonCursorLight v-if="showEffect" />
+  </UxCommonContainer>
+</template>
 ```
 
-## Composables
+## 🎣 Composables
 
-### useStore()
+### useNuxtUxStore()
 
-Access all Pinia stores:
+Access all Pinia stores with reactive state management:
 
 ```ts
-const { ui, auth, app } = useStore();
+const { ui, auth, app } = useNuxtUxStore();
 
-// UI Store
-ui.isDark; // Current theme state
-ui.locale; // Current language
-ui.primary; // Primary color
-ui.flashlight; // Flashlight effect state
+// UI Store - Theme & Preferences
+ui.isDark; // Current theme state (light/dark/system)
+ui.locale; // Current language ('en', 'es', 'fr')
+ui.primary; // Primary color theme
+ui.flashlight; // Flashlight cursor effect
+ui.showVideo; // Background video visibility
+ui.videoURL; // Background video URL
+ui.volumeFX; // Sound effects volume (0-1)
+ui.volumeVideo; // Video volume (0-1)
 
-// Auth Store
+// Auth Store - Authentication
 auth.isAuth; // Authentication status
+auth.user; // User information object
 auth.logout(); // Logout function
 
-// App Store
-app.isMenuOpen; // Menu state
+// App Store - Application State
+app.isMenuOpen; // Mobile menu state
+app.selectedItems; // Selected items array
+app.isProcessing; // Processing state
 ```
 
-### useLangs()
+### useNuxtUxLangs()
 
-Get available language options:
+Get available language options with localized labels and flags:
 
 ```ts
-const langs = useLangs();
-// Returns: [{ value: 'en', label: 'English', icon: '...' }, ...]
+const langs = useNuxtUxLangs();
+// Returns: [
+//   { value: 'en', label: 'English', icon: 'i-circle-flags-us' },
+//   { value: 'es', label: 'Español', icon: 'i-circle-flags-es' },
+//   { value: 'fr', label: 'Français', icon: 'i-circle-flags-fr' }
+// ]
+```
+
+### Store Examples
+
+```vue
+<script setup lang="ts">
+const { ui, auth, app } = useNuxtUxStore();
+
+// Theme switching
+const toggleTheme = () => {
+  ui.isDark = !ui.isDark;
+};
+
+// Language switching
+const switchLanguage = (locale: string) => {
+  ui.locale = locale;
+};
+
+// Authentication
+const login = async (credentials: any) => {
+  const success = await authenticateUser(credentials);
+  if (success) {
+    auth.isAuth = true;
+    auth.user = { name: credentials.username };
+  }
+};
+
+// Video background control
+const toggleVideo = () => {
+  ui.showVideo = !ui.showVideo;
+  if (ui.showVideo && !ui.videoURL) {
+    ui.videoURL = "https://example.com/background.mp4";
+  }
+};
+</script>
 ```
 
 ## Stores
@@ -662,33 +788,21 @@ Found a bug? Have a feature request?
 - Use the issue templates
 - Provide detailed information and reproduction steps
 
-## License
+## 📄 License
 
-**Dual License** - This module is available under two licenses:
-
-### Non-Commercial / Personal Use
-
-For personal, educational, and non-commercial use, this software is licensed under the **Apache License 2.0**.
+**MIT License** - This project is licensed under the MIT License.
 
 You are free to:
 
-- Use, copy, and modify the software
-- Distribute the software
-- Use it for personal projects and learning
+- ✅ **Use** - Use the software for any purpose, including commercial projects
+- ✅ **Modify** - Change and adapt the code to your needs
+- ✅ **Distribute** - Share the software with others
+- ✅ **Sublicense** - Include it in your own licensed software
+- ✅ **Commercial Use** - Use in commercial products and services
 
-### Commercial / Business Use
+### Requirements
 
-For commercial use, including:
-
-- Use in commercial products or services
-- Use by for-profit organizations
-- Use that generates revenue or commercial advantage
-
-You **MUST obtain a separate commercial license**.
-
-**To obtain a commercial license, contact:**
-
-- Alex Colls: [github.com/alexcolls](https://github.com/alexcolls)
+The only requirement is to include the copyright notice and license text in all copies or substantial portions of the software.
 
 ### Disclaimer
 
@@ -743,3 +857,12 @@ If you find this project useful, please consider:
 ---
 
 Made with ❤️ by [Alex Colls](https://github.com/alexcolls)
+
+<!-- Badge References -->
+
+[npm-version-src]: https://img.shields.io/npm/v/@alexcolls/nuxt-ux/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@alexcolls/nuxt-ux
+[npm-downloads-src]: https://img.shields.io/npm/dm/@alexcolls/nuxt-ux.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@alexcolls/nuxt-ux
+[license-src]: https://img.shields.io/badge/License-MIT-28CF8D.svg?style=flat&colorA=18181B
+[license-href]: https://github.com/alexcolls/nuxt-ux/blob/main/LICENSE
