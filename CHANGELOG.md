@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.5.1 - 2025-10-30
+
+### ✨ New Components
+
+**GlassWindow Component System** - Professional window management components:
+- `GlassWindow` - Main glassmorphic window component with full customization
+- `GlassWindowHeader` - Window header with draggable controls
+- `GlassWindowTabs` - Tab navigation with badges and icons
+- `GlassWindowContent` - Scrollable content area with custom scrollbars
+- `GlassWindowFooter` - Footer with left/right action slots
+- `useGlassWindow` - Composable for window state management
+
+**Features:**
+- 🎨 Glassmorphism design with customizable blur (sm/md/lg/xl)
+- 🖱️ Drag & drop with position constraints and persistence
+- 📐 8-direction resizing with min/max size constraints
+- 🗂️ Tab support with badges, icons, and disabled states
+- 💾 localStorage persistence for position, size, and state
+- ⚡ Performance optimized with `requestAnimationFrame`
+- 🎯 Full TypeScript support with comprehensive types
+- 🌓 Dark mode support with custom styled scrollbars
+- 🎭 Teleport to body with smooth transitions
+- 🔧 v-model support and exposed methods for programmatic control
+
+**Total components**: 80 → 85 components (+6% growth)
+
+### 📚 Documentation
+
+- Added comprehensive GlassWindow README with examples
+- Updated main README with GlassWindow component section
+- Added usage examples for all GlassWindow features
+
 ## v0.5.0 - 2025-10-30
 
 ### 🔄 BREAKING CHANGES - Complete Rebrand

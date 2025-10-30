@@ -12,7 +12,7 @@ An **independent, production-ready** Nuxt 3/4 module providing 80+ polished UI c
 
 ## ✨ Features
 
-- 🎨 **80+ Ready-to-Use Components** - Auth, Layout, and Common UI components with consistent design
+- 🎨 **85+ Ready-to-Use Components** - Auth, Layout, and Common UI components with consistent design
 - 🌙 **Dark Mode Support** - Seamless light/dark/system theme switching with state persistence
 - 🌍 **i18n Ready** - Built-in multi-language support (English, Spanish, French)
 - 💾 **State Management** - Pinia stores with automatic persistence and reactive updates
@@ -244,7 +244,7 @@ NUXT_PUBLIC_NUXT_XUI_LOGO_URL=https://your-site.com
 
 ## 📚 Components Library
 
-All components are **auto-imported** and ready to use without any imports. Total: **80 components** organized into three main categories.
+All components are **auto-imported** and ready to use without any imports. Total: **85 components** organized into three main categories.
 
 ### 🔐 Authentication Components (1)
 
@@ -306,7 +306,7 @@ const handleLogin = async (user, pass) => {
 </template>
 ```
 
-### 🎨 Common Components (71)
+### 🎨 Common Components (76)
 
 The largest category with components for every use case, organized by type:
 
@@ -463,7 +463,18 @@ The largest category with components for every use case, organized by type:
 | `UxCommonPdfViewer`        | PDF document viewer       | Document display     |
 | `UxCommonGlobalSearch`     | Advanced search component | Search functionality |
 
-#### Interactive & Advanced (17)
+#### Window Management (6)
+
+| Component                  | Description                         | Special Features         |
+| -------------------------- | ----------------------------------- | ------------------------ |
+| `UxCommonGlassWindow`      | Professional glassmorphic window    | Drag, resize, tabs       |
+| `UxCommonGlassWindowHeader`| Window header with controls         | Min/max/close buttons    |
+| `UxCommonGlassWindowTabs`  | Window tab navigation               | Badges, icons, disabled  |
+| `UxCommonGlassWindowContent`| Window content area                | Custom scrollbars        |
+| `UxCommonGlassWindowFooter`| Window footer with actions          | Left/right slots         |
+| `UxCommonMagicWindow`      | Animated window (legacy)            | Basic animations         |
+
+#### Interactive & Advanced (16)
 
 | Component                  | Description                | Special Features     |
 | -------------------------- | -------------------------- | -------------------- |
@@ -513,6 +524,55 @@ The largest category with components for every use case, organized by type:
     <UxCommonCursorLight v-if="showEffect" />
   </UxCommonContainer>
 </template>
+```
+
+**GlassWindow Example:**
+
+```vue
+<template>
+  <div>
+    <UButton @click="isOpen = true">Open Settings</UButton>
+    
+    <GlassWindow
+      v-model="isOpen"
+      :config="{
+        title: 'Settings',
+        icon: 'i-heroicons-cog-6-tooth',
+        defaultPosition: { x: 100, y: 100 },
+        defaultSize: { width: 700, height: 500 },
+        blurAmount: 'lg',
+        persistent: true,
+      }"
+      :tabs="tabs"
+      v-model:selected-tab="selectedTab"
+      storage-key="app-settings"
+    >
+      <div v-if="selectedTab.id === 'profile'">
+        <h3>Profile Settings</h3>
+        <!-- Your profile form -->
+      </div>
+      <div v-else-if="selectedTab.id === 'security'">
+        <h3>Security Settings</h3>
+        <!-- Your security form -->
+      </div>
+      
+      <template #footer-right>
+        <UButton @click="save">Save Changes</UButton>
+      </template>
+    </GlassWindow>
+  </div>
+</template>
+
+<script setup>
+import type { GlassWindowTab } from '@alexcolls/nuxt-ux'
+
+const isOpen = ref(false)
+const tabs = ref([
+  { id: 'profile', title: 'Profile', icon: 'i-heroicons-user' },
+  { id: 'security', title: 'Security', icon: 'i-heroicons-lock-closed' },
+])
+const selectedTab = ref(tabs.value[0])
+</script>
 ```
 
 ## 🎣 Composables
