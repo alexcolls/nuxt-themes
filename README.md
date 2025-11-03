@@ -802,6 +802,8 @@ cd playground && bun x nuxi prepare && cd ..   # or: deno run -A npm:nuxi prepar
 ```bash
 # Start playground to see all components
 bun run playground   # or: deno task playground, npm run playground
+# or use shortcut
+bun run pg           # or: deno task pg, npm run pg
 
 # Start development server (alias for playground)
 bun start     # or: deno task start, npm start

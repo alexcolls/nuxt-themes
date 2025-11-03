@@ -49,6 +49,7 @@
   "scripts": {
     "start": "npm run dev",
     "playground": "nuxi dev playground",
+    "pg": "nuxi dev playground",
     "prepack": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
