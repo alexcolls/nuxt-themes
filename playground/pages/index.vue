@@ -108,7 +108,7 @@
 </template>
 
 <script setup lang="ts">
-const { auth } = useNuxtXuiStore();
+const { auth } = useNuxtUxStore();
 
 // Redirect to example if not authenticated
 if (!auth.isAuth) {
