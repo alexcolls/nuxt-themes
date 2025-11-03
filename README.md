@@ -4,7 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-An **independent, production-ready** Nuxt 3/4 module providing 80+ polished UI components built with Nuxt UI and Tailwind CSS.
+An **independent, production-ready** Nuxt 3/4 module providing 85+ polished UI components built with Nuxt UI and Tailwind CSS.
 
 > **Standalone Module:** Use in any Nuxt 3+ or Nuxt 4 project as a comprehensive UI component library.
 
@@ -15,7 +15,7 @@ An **independent, production-ready** Nuxt 3/4 module providing 80+ polished UI c
 - 🎨 **85+ Ready-to-Use Components** - Auth, Layout, and Common UI components with consistent design
 - 🌙 **Dark Mode Support** - Seamless light/dark/system theme switching with state persistence
 - 🌍 **i18n Ready** - Built-in multi-language support (English, Spanish, French)
-- 💾 **State Management** - Pinia stores with automatic persistence and reactive updates
+- 💾 **State Management** - Built-in reactive state management with Nuxt's useState
 - 🎯 **TypeScript First** - Full TypeScript support with comprehensive type definitions
 - 🔧 **Highly Customizable** - Tailwind CSS theming with configurable colors and behavior
 - ⚡ **Auto-Import Everything** - Zero-config component and composable imports
@@ -46,13 +46,13 @@ This module has **peer dependencies** that must be installed in your parent Nuxt
 
 ```bash
 # Using Bun (recommended)
-bun add @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+bun add @nuxt/ui @nuxtjs/i18n
 
 # Using Deno
-deno add npm:@nuxt/ui npm:@nuxtjs/i18n npm:@pinia/nuxt npm:@pinia-plugin-persistedstate/nuxt
+deno add npm:@nuxt/ui npm:@nuxtjs/i18n
 
 # Using npm (Node.js)
-npm install --legacy-peer-deps @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+npm install --legacy-peer-deps @nuxt/ui @nuxtjs/i18n
 ```
 
 > **Note (npm users):** Use `--legacy-peer-deps` flag or create a `.npmrc` file with `legacy-peer-deps=true` to avoid peer dependency conflicts when using npm.
@@ -94,7 +94,7 @@ legacy-peer-deps=true
 Then install normally with npm:
 
 ```bash
-npm install @nuxt/ui @nuxtjs/i18n @pinia/nuxt @pinia-plugin-persistedstate/nuxt
+npm install @nuxt/ui @nuxtjs/i18n
 npm install @iconify-json/heroicons @iconify-json/line-md @iconify-json/circle-flags @iconify-json/svg-spinners @iconify-json/pepicons-pop @iconify-json/material-symbols
 npm install @alexcolls/nuxt-ux
 ```
@@ -108,8 +108,6 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/ui",
     "@nuxtjs/i18n",
-    "@pinia/nuxt",
-    "@pinia-plugin-persistedstate/nuxt",
     "@alexcolls/nuxt-ux", // Add this LAST
   ],
 
@@ -125,7 +123,7 @@ export default defineNuxtConfig({
 
   // Configure nuxt-ux
   nuxtUx: {
-    version: "0.5.0",
+    version: "0.6.0",
     logoURL: "https://your-site.com",
   },
 });
@@ -763,7 +761,7 @@ export default defineNuxtConfig({
 Some components support video backgrounds:
 
 ```ts
-const { ui } = useStore();
+const { ui } = useNuxtUxStore();
 
 // Set video URL
 ui.videoURL = "https://example.com/video.mp4";
@@ -874,20 +872,49 @@ See the [LICENSE](./LICENSE) file for full terms.
 
 **Copyright (c) 2025 Alex Colls**
 
-## Credits
+## 💝 Credits & Built With
 
-- [Nuxt 3](https://nuxt.com/) - The Intuitive Vue Framework
-- [Nuxt UI](https://ui.nuxt.com/) - Fully styled and customizable components
-- [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-- [Pinia](https://pinia.vuejs.org/) - The Vue Store
-- [i18n](https://i18n.nuxtjs.org/) - Internationalization
+This module is built on top of incredible open-source technologies:
 
-### Acknowledgments
+### Core Framework
+- 🚀 **[Nuxt 3/4](https://nuxt.com/)** - The Intuitive Vue Framework that powers this module with SSR, auto-imports, and an amazing developer experience
+- 💚 **[Vue 3](https://vuejs.org/)** - The Progressive JavaScript Framework with Composition API and reactive state management
 
-- Nuxt community for the amazing ecosystem
-- All contributors who help improve this module
+### UI & Styling
+- 🎨 **[Nuxt UI](https://ui.nuxt.com/)** - Beautiful, fully styled and customizable components that form the foundation of our components
+- 🌊 **[Tailwind CSS](https://tailwindcss.com/)** - The utility-first CSS framework that makes styling fast and consistent
+- 🎭 **[Iconify](https://iconify.design/)** - Unified icon framework with 150,000+ icons from popular sets
+
+### Internationalization
+- 🌍 **[@nuxtjs/i18n](https://i18n.nuxtjs.org/)** - Powerful internationalization module with auto-routing and SEO support
+
+### Development Tools
+- 📘 **[TypeScript](https://www.typescriptlang.org/)** - JavaScript with syntax for types, providing full type safety throughout
+- ⚡ **[@nuxt/kit](https://nuxt.com/docs/guide/going-further/kit)** - Nuxt module development utilities
+
+### Icon Collections
+- 🎯 **[Heroicons](https://heroicons.com/)** - Beautiful hand-crafted SVG icons by the Tailwind CSS team
+- ✨ **[Line MD](https://icon-sets.iconify.design/line-md/)** - Animated line icons
+- 🚩 **[Circle Flags](https://icon-sets.iconify.design/circle-flags/)** - Circular country flags
+- 🔄 **[SVG Spinners](https://icon-sets.iconify.design/svg-spinners/)** - Animated loading spinners
+- 🎪 **[Pepicons Pop](https://icon-sets.iconify.design/pepicons-pop/)** - Playful filled icons
+- 🔣 **[Material Symbols](https://icon-sets.iconify.design/material-symbols/)** - Google's Material Design icons
+
+### Special Thanks
+
+- 💚 **Nuxt Community** - For building an incredible ecosystem and providing endless inspiration
+- 🎨 **Nuxt UI Team** - For creating beautiful, accessible components that make development a joy
+- 🌊 **Tailwind Labs** - For revolutionizing CSS with utility-first design
+- 👥 **All Contributors** - Everyone who helps improve this module with issues, PRs, and feedback
+
+### Why This Module Exists
+
+Built to bridge the gap between starting a Nuxt project and having production-ready components. We combine the best tools in the ecosystem to give you:
+- ✅ Ready-to-use components that follow best practices
+- ✅ Dark mode and i18n built-in from day one
+- ✅ Type safety and developer experience as priorities
+- ✅ Performance-optimized with SSR support
+- ✅ MIT licensed for maximum freedom
 
 ## Support
 
