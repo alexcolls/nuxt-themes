@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtUxStore, navigateTo } from '#imports'
 const { ui, auth } = useNuxtUxStore();
 
 // Check if already authenticated

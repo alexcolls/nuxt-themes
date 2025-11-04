@@ -23,12 +23,12 @@
         />
       </div>
       <div v-else key="login">
-        <CommonTxtColor
+<UxCommonTxtColor
           class="text-center text-primary-800 dark:text-primary-200
             mt-10 uppercase tracking-widest"
         >
           {{ $t('login') }}
-        </CommonTxtColor>
+        </UxCommonTxtColor>
       </div>
     </transition>
     <transition name="fade">
@@ -83,14 +83,14 @@
             v-if="validUsername && validPassword"
             class="flex justify-center pt-6"
           >
-            <CommonBtnGradient
+<UxCommonBtnGradient
               type="submit"
               class="group px-12 pr-14 py-2 transition-all duration-300
                 ease-in-out rounded-full hover:shadow-lg shadow-white"
               icon="i-heroicons-rocket-launch-16-solid"
             >
               {{ $t('btn.go') }}
-            </CommonBtnGradient>
+            </UxCommonBtnGradient>
           </div>
         </transition>
       </UForm>

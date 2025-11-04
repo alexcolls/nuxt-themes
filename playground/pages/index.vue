@@ -108,6 +108,7 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtUxStore, navigateTo } from '#imports'
 const { auth } = useNuxtUxStore();
 
 // Redirect to example if not authenticated

@@ -49,6 +49,15 @@ export default defineNuxtModule<ModuleOptions>({
     // Register components
     await addComponentsDir({
       path: resolver.resolve('./runtime/components'),
+      // Keep path segments in component names (e.g., Layout/Header -> UxLayoutHeader)
+      // pathPrefix defaults to true
+      prefix: 'Ux',
+      global: true
+    });
+
+    // Backward-compat alias for Common/* components used internally (e.g., <CommonTxtColor>)
+    await addComponentsDir({
+      path: resolver.resolve('./runtime/components/Common'),
       pathPrefix: false,
       prefix: 'Common',
       global: true
@@ -57,14 +66,30 @@ export default defineNuxtModule<ModuleOptions>({
     // Add composables
     addImportsDir(resolver.resolve('./runtime/composables'));
 
+    // Alias for Layout/* as <Layout*>
+    await addComponentsDir({
+      path: resolver.resolve('./runtime/components/Layout'),
+      pathPrefix: false,
+      prefix: 'Layout',
+      global: true
+    });
+
+    // Alias for Auth/* as <Auth*>
+    await addComponentsDir({
+      path: resolver.resolve('./runtime/components/Auth'),
+      pathPrefix: false,
+      prefix: 'Auth',
+      global: true
+    });
+
     // Add locales for i18n (if i18n is installed by parent)
     nuxt.hook('i18n:registerModule', (register) => {
       register({
         langDir: resolver.resolve('./runtime/locales'),
         locales: [
-          { code: 'en', file: 'en.js' },
-          { code: 'es', file: 'es.js' },
-          { code: 'fr', file: 'fr.js' }
+          { code: 'en', file: 'en.ts' },
+          { code: 'es', file: 'es.ts' },
+          { code: 'fr', file: 'fr.ts' }
         ]
       });
     });

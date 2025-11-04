@@ -31,7 +31,7 @@
 <script setup lang="ts">
 
 const config = useRuntimeConfig();
-const version = config.public.nuxtThemes?.version ?? '1.0.0';
+const version = config.public.nuxtUx?.version ?? '1.0.0';
 const date = new Date();
 const year = date.getFullYear();
 
